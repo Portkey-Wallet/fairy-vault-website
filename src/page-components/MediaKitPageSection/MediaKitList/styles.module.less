@@ -1,0 +1,104 @@
+/* stylelint-disable value-no-vendor-prefix */
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
+
+.mediaKitList {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  margin: auto;
+
+  .item {
+    flex: 1;
+    width: calc((100% - 40px) / 2);
+    min-width: calc((100% - 40px) / 2); // main effect
+    max-width: calc((100% - 40px) / 2); // main effect
+    margin-bottom: 40px;
+    margin-right: 40px;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    .logoImageWrap {
+      height: 194px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      padding: 0 20px;
+      .logoImage {
+        height: 100px;
+        max-height: 100px;
+      }
+    }
+    .name {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: @font-5;
+      flex: 1;
+      display: -webkit-inline-box;
+      word-break: break-all;
+      .text-overflow(1);
+    }
+    .downloadBtnWrap {
+      min-width: 150px;
+      .downloadBtn {
+        width: 59px;
+        height: 32px;
+        border: 1px solid @primary-color;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: @primary-color;
+        margin-left: 16px;
+        &:hover {
+          background-color: @primary-color;
+          color: transparent;
+          background-image: url('../../../assets/images/download/download.svg');
+          background-position: center;
+          background-repeat: no-repeat;
+          transition: none;
+        }
+      }
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: @font-5;
+  }
+
+  @media screen and (max-width: @divide-991) {
+    margin-top: 60px;
+    margin-bottom: 29px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .item {
+      margin-right: 0;
+      margin-bottom: 37px;
+      width: 100%;
+      max-width: @content-width-tablet;
+      min-width: none;
+      .logoImageWrap {
+        position: relative;
+        height: 124px;
+        margin-bottom: 12px;
+        .logoImage {
+          height: 64px;
+          max-height: 64px;
+        }
+      }
+      .name {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}

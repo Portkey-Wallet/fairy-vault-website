@@ -1,0 +1,62 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+
+.sslTip {
+  padding: 24px;
+  background: rgb(250 173 20 / 5%);
+  border: 1px solid rgb(250 173 20 / 40%);
+  border-radius: 12px;
+  .tipContent {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 18px;
+    text-align: left;
+
+    .tipSign {
+      color: @warning;
+    }
+  }
+}
+.tipLinkWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  .tipLinkExample {
+    background: @bg-2;
+    border: 1px solid rgb(250 173 20 / 40%);
+    border-radius: 40px;
+    position: relative;
+  }
+
+  .tipLinkExampleCorrect {
+    padding: 4px 56px 4px 5px;
+    @media screen and (min-width: 375px) and (max-width: 412px) {
+      padding: 4px 19px 4px 5px;
+    }
+  }
+
+  .tipLinkExampleFault {
+    padding: 4px 5px;
+  }
+
+  .tipLink {
+    font-size: 14px;
+    line-height: 22px;
+    user-select: none;
+  }
+
+  .iconLock {
+    width: 34px;
+    height: 28px;
+    background: #e6f5ea;
+    border-radius: 20px;
+    margin-right: 12px;
+  }
+  .iconUnlock {
+    width: 34px;
+    height: 28px;
+    background: #f3e8e8;
+    border-radius: 20px;
+  }
+}

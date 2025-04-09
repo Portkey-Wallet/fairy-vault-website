@@ -1,0 +1,14 @@
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="add_ad">
+<mask id="mask0_16169_10534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+<rect id="Bounding box" width="28" height="28" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_16169_10534)">
+<g id="add_ad_2">
+<path d="M22.1667 25.6668V22.1668H18.6667V19.8335H22.1667V16.3335H24.5V19.8335H28V22.1668H24.5V25.6668H22.1667Z" fill="white"/>
+</g>
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M8.16666 8.15774L18.2437 4.6665L21 8.1665L8.16666 8.15774Z" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M23.3333 13.4165V9.18734C23.3333 8.62353 22.8894 8.1665 22.3417 8.1665H4.49167C3.94398 8.1665 3.5 8.62353 3.5 9.18734V23.479C3.5 24.0428 3.94398 24.4998 4.49167 24.4998H16.9167" stroke="white" stroke-width="1.75" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

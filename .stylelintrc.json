@@ -1,0 +1,25 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier", "stylelint-config-recommended-less"],
+  "customSyntax": "postcss-less",
+  "rules": {
+    "font-family-name-quotes": null,
+    "rule-empty-line-before": null,
+    "selector-pseudo-class-no-unknown": null,
+    "no-descending-specificity": null,
+    "selector-class-pattern": [
+      "^[a-z][a-zA-Z0-9]*$",
+      {
+        "message": "Expected class selector to be camelCase for CSS modules"
+      }
+    ],
+    "font-family-no-missing-generic-family-keyword": null
+  },
+  "overrides": [
+    {
+      "files": ["**/*.module.less"],
+      "rules": {
+        "selector-class-pattern": null
+      }
+    }
+  ]
+}

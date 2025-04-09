@@ -1,0 +1,53 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
+
+.dAppSectionWrap {
+  gap: 80px;
+  padding: 120px 70px;
+  background-color: @bg-6;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  color: @font-3;
+  text-align: center;
+}
+
+.dAppWrap {
+  flex-wrap: wrap;
+}
+
+.logoWrap {
+  width: 260px;
+  height: 150px;
+}
+
+.logo {
+  width: 200px;
+  height: 60px;
+}
+
+@media screen and (max-width: @divide-991) {
+  .dAppSectionWrap {
+    gap: 40px;
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .logoWrap {
+    width: 166px;
+    height: 100px;
+  }
+
+  .logo {
+    width: 130px;
+    height: 40px;
+  }
+}

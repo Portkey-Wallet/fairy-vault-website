@@ -1,0 +1,122 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
+
+.footer {
+  padding-top: 60px;
+  min-width: @page-min-width;
+
+  .footerBody {
+    width: 100%;
+  }
+  .footerNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+    overflow-x: hidden; // Prevent horizontal scrolling caused by too long menu title
+
+    .footerLogoWrapper {
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .footerDescription {
+      font-size: 14px;
+      line-height: 22px;
+      color: @font-5;
+    }
+
+    .menus {
+      flex-wrap: wrap;
+      gap: 90px;
+      // gap: calc((100% - 600px) / 4);
+
+      .menuGroup {
+        width: 120px;
+        overflow-x: hidden;
+        .firstMenus {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #84909a;
+          margin-bottom: 12px;
+        }
+        .secondMenus {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+          color: @font-7;
+          margin-bottom: 8px;
+          cursor: pointer;
+          &:hover {
+            color: @font-1;
+          }
+        }
+      }
+    }
+  }
+
+  .footerMedia {
+    height: 64px;
+    border-top: 1px solid #f4f5f7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .iconBase {
+      width: 24px;
+      height: 24px;
+      margin-right: 22px;
+      cursor: pointer;
+    }
+
+    .footerPortKey {
+      font-size: 14px;
+      line-height: 22px;
+      color: @font-6;
+    }
+  }
+
+  .onlyFooterMedia {
+    border-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (max-width: @divide-767) {
+    .footerNav {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: @divide-579) {
+    .footerNav {
+      .menus {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+    .footerMedia {
+      height: 94px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 20px;
+
+      .footerPortKey {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.footerWithOnlyMedia {
+  padding-top: 0;
+  min-width: @page-min-width;
+}

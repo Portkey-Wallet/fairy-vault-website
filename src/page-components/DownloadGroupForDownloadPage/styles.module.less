@@ -1,0 +1,38 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/constants.less';
+
+.DownloadBtnGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media screen and (max-width: @divide-579) {
+    justify-content: center;
+  }
+}
+
+.AndroidBtnGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  .btnGroup {
+    display: flex;
+  }
+
+  .gap {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media screen and (max-width: @divide-579) {
+    justify-content: center;
+    align-items: flex-start;
+
+    .btnGroup {
+      flex-direction: column;
+    }
+  }
+}

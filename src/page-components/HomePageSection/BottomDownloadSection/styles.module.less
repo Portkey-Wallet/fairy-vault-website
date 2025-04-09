@@ -1,0 +1,46 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
+
+.bottomDownloadSection {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .sectionTitle {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .homeBottomDownloadGroup {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .homeBottomDownloadForOthersBtn {
+      color: @font-4;
+      border: 1px solid @font-4;
+      &:hover {
+        color: @font-4;
+        border: 1px solid @font-4;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  @media screen and (max-width: @divide-991) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .sectionTitle {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    .homeBottomDownloadGroup {
+      margin-top: 40px;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
+
+.inviteBridgeContainer {
+  position: relative;
+  background-color: #458aff;
+  background-image: url('../../assets/images/sc/bg.svg');
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  min-width: @page-min-width;
+  min-height: @divide-580;
+
+  .inviteBridgeHeader {
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    min-width: @page-min-width;
+
+    .downloadBtn {
+      width: 104px;
+      height: 36px;
+      background: @bg-2;
+      border-radius: 6px;
+      font-size: 16px;
+      color: @font-1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .infoCard {
+    color: @font-7;
+    text-align: center;
+    margin: 40px auto;
+    padding: 40px 24px 24px;
+    border-radius: 12px;
+    background-color: @bg-2;
+    max-width: 440px;
+
+    .infoLabel {
+      font-size: 24px;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+
+    .businessId {
+      font-size: 16px;
+      word-wrap: break-word;
+    }
+    .openBtn {
+      width: 100%;
+      max-width: 287px;
+      font-size: 16px;
+      color: @font-3;
+      background: @font-1;
+      border-radius: 6px;
+      padding: 12px 24px;
+      height: 48px;
+      opacity: 1;
+      margin-top: 68px;
+      &:hover {
+        opacity: 0.8;
+        color: @font-3;
+        background: @font-1;
+      }
+      &:focus {
+        opacity: 1;
+        color: @font-3;
+        background: @font-1;
+      }
+    }
+  }
+  .maskContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    .paperAirplane {
+      width: 64px;
+      height: 64px;
+      margin: 16px 24px 8px auto;
+    }
+    .tipWrap {
+      margin-right: 37px;
+    }
+
+    .text {
+      width: 250px;
+      margin-left: 10px;
+      font-size: 16px;
+      color: @font-3;
+      .hightLight {
+        color: @font-1;
+      }
+    }
+  }
+}

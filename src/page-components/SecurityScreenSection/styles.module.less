@@ -1,0 +1,127 @@
+@import '/src/assets/theme/color.less';
+.securitySection {
+  position: relative;
+  top: -102px;
+  background: @bg-7;
+  color: white;
+  padding-top: 240px;
+}
+.securityTitle {
+  color: white;
+  font-family: 'BG';
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 0.8888888888em;
+}
+.introContainer {
+  margin-bottom: 240px;
+}
+.SecurityIntroContainer {
+  display: flex;
+  padding: 64px 32px 48px 32px;
+  flex-direction: column;
+  align-items: center;
+  // gap: 64px;
+  flex: 1 0 0;
+  border-radius: 16px;
+  border: 1px solid #414142;
+  background: #1F1F21;
+}
+.SecurityIntroText {
+  align-self: stretch;
+  color: #FFFFFF;
+  text-align: center;
+
+  /* Title Page */
+  font-family: 'BG';
+  font-size:32px;
+  font-style: normal;
+  font-weight: 700;
+}
+.halfSizeImage {
+  width: 50%;
+  height: 50%;
+}
+
+
+// faq style
+.faqCard {
+  border: 1px solid #414142;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #1F1F21;
+  padding: 37.5px 32px;
+}
+
+.faqHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding: 0 16px;
+  // background-color: #f9f9f9;
+  cursor: pointer;
+
+  h3 {
+    color: #FFF;
+
+    /* Subtitle */
+    font-family: 'BG';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 28.8px */
+  }
+
+  .toggleButton {
+    width: 32px;
+    height: 32px;
+    // border: none;
+    border-radius: 50%; 
+    border: 1px solid #E3E3E3;
+    background-color: transparent;
+    // color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    // transition: background-color 0.3s ease;
+
+    // &:hover {
+    //   background-color: #0056b3;
+    // }
+
+    // &.open {
+    //   background-color: #28a745;
+    // }
+
+    .icon {
+      display: inline-block;
+      line-height: 1;
+    }
+  }
+}
+
+.faqAnswer {
+  overflow: hidden;
+  // margin-top: 37.5px;
+  padding-top: 37.5px;
+  display: flex;
+  align-items: flex-end;
+  p {
+    // margin: 16px 0;
+    color: #FFF;
+
+    /* Body Base */
+    font-family: 'SG';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+.displayNone {
+  // display: none;
+}

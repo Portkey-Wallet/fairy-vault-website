@@ -1,0 +1,69 @@
+@import '/src/assets/theme/color.less';
+.featureSection {
+  position: relative;
+  top: -102px;
+  background: @bg-7;
+  color: white;
+}
+.featureTitle {
+  color: white;
+  font-family: 'BG';
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+}
+.miniIcon {
+  flex: none;
+  width: 28px;
+  height: 28px;
+}
+.largeIcon {
+  flex: none;
+  width: 260px;
+  height: 260px;
+}
+.introContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 16px;
+  border: 1px solid #414142;
+  background: #1F1F21;
+  padding: 48px 64px;
+}
+.introDataContainer {
+  margin-top: 16px;
+  gap: 12px;
+}
+.introDataContainer:nth-child(1) {
+  margin-top: 32px;
+}
+.introTitle {
+  color: white;
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+}
+.featureSubTitle {
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 160px;
+}
+.dappIcon {
+  flex: 1;
+  height: 100px;
+}
+.dappIconSvg {
+  &:hover {
+    svg {
+      path {
+        fill: white;
+      }
+    }
+  }
+}

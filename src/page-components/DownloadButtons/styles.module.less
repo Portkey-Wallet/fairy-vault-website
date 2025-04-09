@@ -1,0 +1,106 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+
+.storeBtn {
+  width: 180px;
+  height: 50px;
+  color: @font-3;
+  border-radius: 6px;
+  border: 1px solid @border-3;
+  background: @bg-3;
+  padding: 0;
+
+  .storeBtnLogo {
+    margin: 0 auto;
+  }
+  &:hover {
+    background: linear-gradient(0deg, #2d3133, #2d3133), @bg-3;
+    border: 1px solid @border-3;
+  }
+  &:focus {
+    border: 1px solid @border-3;
+    background: @bg-3;
+  }
+}
+
+.otherStoreBtn {
+  width: 230px !important;
+}
+
+.downloadForOthersBtn {
+  width: 180px;
+  height: 50px;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  color: @font-3;
+  background: transparent;
+
+  &:hover {
+    border: 1px solid rgb(255 255 255 / 60%);
+    color: @font-3;
+    opacity: 0.8;
+    background: transparent;
+  }
+  &:focus {
+    border: 1px solid rgb(255 255 255 / 60%);
+    color: @font-3;
+    opacity: 1;
+    background: transparent;
+  }
+}
+
+.qrCodeBtn {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid @border-3;
+  border-radius: 6px;
+
+  .qrCodeBtnLogo {
+    padding: 18px;
+  }
+  &:hover {
+    opacity: 0.8;
+    border: 1px solid @border-3;
+  }
+  &:focus {
+    opacity: 1;
+    border: 1px solid @border-3;
+  }
+}
+
+.qrCodePopover {
+  .scanText {
+    width: 120px;
+    font-size: 14px;
+    line-height: 22px;
+    color: @font-2;
+    text-align: center;
+  }
+}
+
+.comingSoonUI {
+  .comingSoonTitle {
+    margin-top: 5px;
+    margin-bottom: 9px;
+    .iconHourglass {
+      margin-right: 8px;
+    }
+  }
+  .comingSoonContent {
+    padding-bottom: 4px;
+    .joinLink {
+      text-decoration: underline;
+      color: @primary-color;
+    }
+  }
+}
+
+.comingSoonPopover {
+  padding-right: 15px !important;
+}

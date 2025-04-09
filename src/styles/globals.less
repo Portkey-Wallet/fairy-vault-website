@@ -1,0 +1,92 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable value-keyword-case */
+// @import '~antd/dist/antd.variable.less';
+@import '/src/assets/theme/customize.less';
+@import '/src/assets/theme/common-class.less';
+@import '/src/assets/theme/constants.less';
+@import '/src/assets/theme/color.less';
+@import '/src/assets/theme/font.less';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: @bg-2;
+}
+
+html body {
+  color: @font-2;
+  .font-family-regular();
+}
+
+::selection {
+  background: rgba(104, 170, 253, 40%);
+  color: currentColor;
+}
+
+:-moz-selection {
+  background: rgba(104, 170, 253, 40%);
+  color: currentColor;
+}
+
+::-webkit-selection {
+  background: rgba(104, 170, 253, 40%);
+  color: currentColor;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.text-btn-base {
+  height: 24px;
+  line-height: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.text-black-btn:extend(.text-btn-base) {
+  color: @font-2;
+  &:hover {
+    .text-black-btn-select();
+  }
+}
+
+.text-white-btn:extend(.text-btn-base) {
+  color: @font-3;
+  opacity: 0.8;
+  &:hover {
+    .text-white-btn-select();
+  }
+}
+
+.text-black-btn-select {
+  color: @font-1;
+  background-color: transparent;
+}
+
+.text-white-btn-select {
+  opacity: 1;
+  color: @font-3;
+  background-color: transparent;
+}
+
+.home-page {
+  overflow-x: hidden;
+  background: @bg-7;
+  @media screen and (max-width: @divide-991) {
+    overflow-x: auto;
+  }
+}
+
+.empty-container {
+  min-width: @page-min-width;
+  background-color: '#4D83EF'; 
+  height: 102px;
+}

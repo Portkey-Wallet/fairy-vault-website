@@ -1,0 +1,198 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
+
+.emptyContainerDownload {
+  height: 80px;
+}
+.downloadPage {
+  padding-top: 48px;
+  padding-bottom: 70px;
+  background-color: @bg-2;
+  overflow-x: hidden;
+
+  .pageBody {
+    .pageLeft {
+      max-width: 590px;
+      margin-right: 30px;
+      margin-top: 52px;
+      text-align: left;
+      .downloadBtn {
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+    }
+    .pageRight {
+      .mainImage {
+        max-width: 600px;
+        max-height: 600px;
+        @media screen and (min-width: 1100px) {
+          width: 600px;
+          height: 600px;
+        }
+      }
+    }
+    .webShow {
+      width: 100%;
+      display: block;
+    }
+
+    @media screen and (min-width: 1400px) {
+      max-width: 1300px;
+      width: 1300px;
+      min-width: 1300px;
+      .pageLeft {
+        width: 590px;
+        min-width: 590px;
+        margin-left: 110px;
+      }
+    }
+    @media screen and (min-width: 1100px) {
+      max-width: 1300px;
+      width: 1300px;
+      min-width: 1300px;
+      .pageLeft {
+        width: 580px;
+        min-width: 580px;
+        margin-left: 110px;
+      }
+    }
+  }
+
+  .mobileShow {
+    width: 100%;
+    display: none;
+  }
+}
+
+.devicesTabs {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  padding: 4px;
+  border: 1px solid @border-2;
+  border-radius: 6px;
+
+  .tabsBtn {
+    height: 36px;
+    line-height: 24px;
+    padding: 6px 30px;
+    font-weight: 500;
+    font-size: 16px;
+    color: @font-5;
+    margin-left: 10px;
+
+    &:hover {
+      color: @font-1;
+      background-color: transparent;
+    }
+
+    &:focus {
+      .tabsBtnSelected();
+    }
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+  .tabsBtnSelected {
+    background: @font-1;
+    border-radius: 6px;
+    color: @font-3;
+    &:hover {
+      background: @font-1;
+      color: @font-3;
+    }
+  }
+  @media screen and (max-width: 393px) {
+    width: 100%;
+    .tabsBtn {
+      flex-grow: 1;
+      width: 100%;
+      padding: 6px 0;
+    }
+  }
+}
+
+.sectionTitle {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  white-space: nowrap;
+  @media screen and (max-width: 1079px) {
+    white-space: normal;
+  }
+}
+.sectionDesc {
+  font-size: 18px;
+  line-height: 26px;
+  color: @font-5;
+}
+
+.downloadFooter {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  background: @bg-4;
+
+  .downloadFooterMedia {
+    border-top: 1px solid @border-2;
+  }
+
+  @media only screen and (max-height: 1011px) {
+    position: relative;
+  }
+  @media only screen and (max-width: @divide-991) {
+    position: relative;
+  }
+}
+
+// content Adaptation Rules
+@media screen and (max-width: 1079px) and (min-width: @divide-992) {
+  .pageLeft {
+    max-width: 440px;
+    width: 440px;
+  }
+}
+
+@media screen and (min-width: @divide-992) {
+  .pageLeft {
+    margin-right: 34px;
+  }
+}
+
+// mobile style
+@media screen and (max-width: @divide-991) {
+  .downloadPage {
+    padding-top: 24px;
+    padding-bottom: 60px;
+
+    .pageBody {
+      flex-direction: column;
+      .pageLeft {
+        max-width: @content-width-desktop;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        margin-top: 0;
+        text-align: center;
+        .downloadBtn {
+          margin-top: 40px;
+          margin-bottom: 40px;
+        }
+      }
+      .pageRight {
+        margin-bottom: 40px;
+      }
+      .webShow {
+        display: none;
+      }
+    }
+    .mobileShow {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
+
+.prioritySection {
+  background: @bg-4;
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  .sectionTitle {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .sectionSubTitle {
+    color: @font-5;
+    font-size: 18px;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .prioritySectionCard {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 80px;
+  }
+
+  @media screen and (min-width: @divide-991) {
+    .prioritySectionCard {
+      .card {
+        flex: 1;
+      }
+    }
+  }
+
+  @media screen and (max-width: @divide-991) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .sectionTitle {
+      font-size: 30px;
+      line-height: 40px;
+      max-width: @content-width-tablet;
+      min-width: @content-width-mobile;
+    }
+    .prioritySectionCard {
+      max-width: @content-width-tablet;
+      min-width: @content-width-mobile;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+  }
+}

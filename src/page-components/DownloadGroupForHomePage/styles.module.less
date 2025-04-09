@@ -1,0 +1,57 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/constants.less';
+
+.DownloadBtnGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media screen and (max-width: @divide-579) {
+    justify-content: center;
+  }
+}
+
+.HomeButtonWrap {
+  width: 180px;
+  height: 56px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  padding: 9px 20px;
+  color: #fff;
+
+  .rightWrap {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+  }
+
+  .topTitle {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .blank {
+    height: 2px;
+  }
+
+  .deviceTitle {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.HomeButtonWrap:hover {
+  background-color: #000;
+  border-color: #000;
+  cursor: pointer;
+}
+
+.MobileAppButtonRightSection {
+  display: grid;
+  grid-template-columns: repeat(2, 176px);
+  grid-gap: 16px;
+  padding: 12px;
+}

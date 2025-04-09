@@ -1,0 +1,56 @@
+/* stylelint-disable selector-class-pattern */
+@import '/src/assets/theme/color.less';
+
+.homePriorityCard {
+  padding: 48px 32px 64px;
+  background: @bg-2;
+  border-radius: 12px;
+  width: 100%;
+
+  &:hover {
+    background: @font-1;
+    box-shadow: 0 24px 40px rgb(91 142 244 / 24%);
+    .cardTitle {
+      color: @font-3;
+    }
+    .cardContent {
+      color: @font-3;
+    }
+  }
+
+  .cardTitle {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+
+  .cardContent {
+    font-size: 16px;
+    line-height: 24px;
+    color: @font-5;
+    .cardContentRow {
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .iconWrap {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    .iconHover {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .iconNormal {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

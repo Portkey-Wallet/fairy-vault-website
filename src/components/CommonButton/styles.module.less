@@ -1,0 +1,70 @@
+.commonButton {
+  &.antBtn {
+    height: 48px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'SG';
+  }
+
+  &.antBtnPrimary {
+    color: #0A4370;
+    background: #B8E1FF;
+    border: none;
+    &:hover {
+      color: #0A4370;
+      background: #DFF0FF;
+    }
+    &:disabled,
+    &:disabled:hover {
+      color: #848485;
+      background-color: #1F1F21;
+      border-color: transparent;
+      opacity: 1;
+    }
+  }
+
+  &.btnOutline {
+    color: #1F1F21;
+    background: #151318;
+    border: 1.5px solid #5A5A5A;
+    &:hover {
+      background: #F4F4F4;
+      border-color: #434343;
+    }
+    &:disabled,
+    &:disabled:hover {
+      color: #A5A5A6;
+      background-color: #1F1F21;
+      border-color: transparent;
+    }
+  }
+
+  &.btnPrimaryOutline {
+    color: #242424;
+    box-shadow: 0 0 0 5px #062A4B inset;
+    border-radius: 9999px;
+    background: #B697FF;
+    border-color: #B697FF;
+    &:hover,
+    &:active {
+      background: #DFF0FF;
+      border-color: #DFF0FF;
+    }
+  }
+
+  &.btnDanger {
+    color: #FCECE6;
+    border-radius: 9999px;
+    background: #B73907;
+    border-width: 0;
+    &:hover,
+    &:active {
+      background: #8C2E08;
+    }
+  }
+
+  .loading {
+    display: flex;
+  }
+}

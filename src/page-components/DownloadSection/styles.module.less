@@ -1,0 +1,82 @@
+.downloadContainer {
+  margin-top: 98px;
+  height: 652px;
+  width: 100%;
+  position: relative;
+  background: #1F1F21;
+  padding: 160px 80px;
+  display: flex;
+  align-items: flex-start;
+}
+.iphoneBg {
+  position: absolute;
+  right: 0;
+  top: 80px;
+}
+
+.downloadTitle {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  width: 757px;
+  margin-bottom: 64px;
+}
+.containerAppStore {
+  display: flex;
+  height: 64px;
+  width: 273px;
+  padding: 12px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 9999px;
+  background: #303030;
+}
+.appStoreIcon {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  // pointer-events: none;
+}
+.appStoreText {
+  color: #E3E3E3;
+  text-align: center;
+
+  /* Single Line/Body Strong */
+  font-family: 'SG';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+}
+.qrCodeContainer {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  // padding: 12px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background: #303030;
+  &:hover {
+    cursor: pointer;
+    svg {
+      path {
+        fill: white;
+        fill-opacity: 1;
+      }
+    }
+  }
+}
+.qrCode {
+  width: 32px !important;
+  height: 32px !important;
+  svg {
+    path {
+      &:hover {
+      fill: white;
+      fill-opacity: 1;
+      }
+    }
+  }
+}
