@@ -81,9 +81,9 @@ export interface DownloadQRCodeData {
 }
 
 export const SEO_TDK: ISeoTDK = {
-  title: 'Portkey: Secure AA Crypto Wallet for Web3 Asset Management',
-  description: `Portkey, aelf's AA crypto wallet, lets you login with Web2 socials. No private keys needed. Enjoy secure, free DID account creation and social recovery.`,
-  keywords: 'DID, social recovery, crypto wallet, AA wallet',
+  title: 'FairyVault: Secure EOA Crypto Wallet for Web3 Asset Management',
+  description: `FairyVault, aelf\'s EOA crypto wallet, gives you complete control with private key security. Manage your crypto assets, NFTs, and connect to dApps on the aelf blockchain with ease.`,
+  keywords: 'EOA wallet, private key, crypto wallet, aelf blockchain, Web3, digital assets',
 };
 
 export const firstScreenData: IFirstScreenData = {

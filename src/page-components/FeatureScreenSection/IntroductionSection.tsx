@@ -18,7 +18,7 @@ export default function IntroductionSection({
 }) {
   return (
     <motion.div
-      variants={variantRightToLeft(3)}
+      variants={variantRightToLeft(1.5)}
       initial={INITIAL}
       whileInView={WHILE_IN_VIEW}
       viewport={VIEWPORT}

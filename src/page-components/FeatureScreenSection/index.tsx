@@ -27,7 +27,7 @@ import { Divider } from 'antd';
 import CommonImage from 'components/CommonImage';
 import { ReactSVG } from 'react-svg';
 import CustomSvg from 'components/CustomSvg';
-console.log('wfs == portkeyEntry', portkeyEntry);
+
 export default function FeatureScreenSection() {
   return (
     <section className={clsx(['section-container-80', styles.featureSection])}>

@@ -72,7 +72,6 @@ export default function FirstScreenSection({
           <div
             className={clsx('flex-row-center-center', styles.containerAppStore)}
             onClick={() => {
-              console.log('wfs!!');
             }}>
             <div className="flex-row-center-center">
               <CommonImage src={appstoreIos} className={styles.appStoreIcon} />
@@ -82,7 +81,6 @@ export default function FirstScreenSection({
           <div
             className={clsx('flex-row-center-center', styles.containerAppStore)}
             onClick={() => {
-              console.log('wfs!!');
             }}>
             <CommonImage src={appstoreAndroid} className={styles.appStoreIcon} />
             <div className={styles.appStoreText}>Download for Android</div>

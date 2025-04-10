@@ -19,6 +19,7 @@ import { headerContainerBg } from 'assets/images';
 import FeatureScreenSection from 'page-components/FeatureScreenSection';
 import SecurityScreenSection from 'page-components/SecurityScreenSection';
 import DownloadSection from 'page-components/DownloadSection';
+import FooterSection from 'page-components/FooterSection';
 
 export default function Home({ headerNav, footerNav, socialMedia, homeData, downloadResource }: IHomePageProps) {
   const uaType = useUserAgent();
@@ -58,7 +59,8 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
       <FeatureScreenSection />
       <SecurityScreenSection />
       <DownloadSection />
-      <DAppSection title={homeData?.dAppSectionTitle} dAppList={homeData?.dAppList} />
+      <FooterSection />
+      {/* <DAppSection title={homeData?.dAppSectionTitle} dAppList={homeData?.dAppList} />
 
       <PrioritySection />
 
@@ -76,7 +78,7 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
         apkS3Url={downloadResource?.apkDownloadUrl || TMP_APK_S3_DOWNLOAD}
       />
 
-      <NavFooter footerNav={footerNav} socialMedia={socialMedia} />
+      <NavFooter footerNav={footerNav} socialMedia={socialMedia} /> */}
     </div>
   );
 }
