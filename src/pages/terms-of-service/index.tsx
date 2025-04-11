@@ -20,15 +20,20 @@ export default function TermsOfService() {
             }}
           />
           <div className={styles.titleContent}>
-            <span>{pageTitle}</span>
-            <span>{pageUpdateTime}</span>
+            <span suppressHydrationWarning>{pageTitle}</span>
+            <span suppressHydrationWarning>{pageUpdateTime}</span>
           </div>
         </div>
 
         <div className={styles.content}>
           {content.map((item, idx) =>
             item.isInnerHTML ? (
-              <span key={idx} className={item.className} dangerouslySetInnerHTML={{ __html: item.content }} />
+              <span
+                key={idx}
+                className={item.className}
+                dangerouslySetInnerHTML={{ __html: item.content }}
+                suppressHydrationWarning
+              />
             ) : (
               <span key={idx} className={item.className}>
                 {item.content}

@@ -14,13 +14,12 @@ export default function DownloadSection() {
     <motion.div className={clsx(styles.downloadContainer, 'flex-column')} initial={INITIAL}
           whileInView={WHILE_IN_VIEW}
           viewport={VIEWPORT}
-          variants={variantOpacity(2)}>
+          variants={variantOpacity(1)}>
       <h1 className={styles.downloadTitle}>Get started with FairyVault Your gateway to the future of Web3.</h1>
       <div className={clsx('flex-row-center-center', 'gap-24')}>
         <div
           className={clsx('flex-row-center-center', styles.containerAppStore)}
           onClick={() => {
-            console.log('wfs!!');
           }}>
           <div className="flex-row-center-center">
             <CommonImage src={appstoreIos} className={styles.appStoreIcon} />
@@ -35,7 +34,6 @@ export default function DownloadSection() {
         <div
           className={clsx('flex-row-center-center', styles.containerAppStore)}
           onClick={() => {
-            console.log('wfs!!');
           }}>
           <CommonImage src={appstoreAndroid} className={styles.appStoreIcon} />
           <div className={styles.appStoreText}>Download for Android</div>
@@ -45,6 +43,7 @@ export default function DownloadSection() {
         </div>
       </div>
       <CommonImage src={iPhone} layout="intrinsic" className={styles.iphoneBg}/>
+      <CustomSvg type="downloadCoin" className={styles.downloadCoin}/>
     </motion.div>
   </section>;
 }

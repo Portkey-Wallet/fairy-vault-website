@@ -34,17 +34,17 @@ export default function SecurityScreenSection() {
         <SecurityIntroductionItem
           iconName={Key}
           content={'Complete user control over assets'}
-          variants={variantLeftToRight(2)}
+          variants={variantLeftToRight(1.5)}
         />
         <SecurityIntroductionItem
           iconName={Lock}
           content={'Advanced encryption protocols'}
-          variants={variantOpacity(2)}
+          variants={variantOpacity(1)}
         />
         <SecurityIntroductionItem
           iconName={Database}
           content={'Secure backup solutions'}
-          variants={variantRightToLeft(2)}
+          variants={variantRightToLeft(1.5)}
         />
       </div>
       <h1 className={styles.securityTitle}>FAQ</h1>

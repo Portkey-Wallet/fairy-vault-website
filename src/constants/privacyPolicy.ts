@@ -36,7 +36,7 @@ export const privacyPolicyContents: IPrivacyPolicyContents[] = [
   },
   {
     className: styles.fontS,
-    content: `Our Platform is not intended for individuals under the age of 18, and we do not knowingly collect personal information from minors. If you believe we have inadvertently gathered data from a child under 18, please contact us at support@portkey.finance, and we will take prompt action to delete such information.`,
+    content: `Our Platform is not intended for individuals under the age of 18, and we do not knowingly collect personal information from minors. If you believe we have inadvertently gathered data from a child under 18, please contact us at info@fairyvault.com, and we will take prompt action to delete such information.`,
   },
   {
     className: styles.fontL,
@@ -209,7 +209,7 @@ export const privacyPolicyContents: IPrivacyPolicyContents[] = [
   },
   {
     className: styles.fontS,
-    content: `   We may collect information about your use of the platform through tools like Google Play’s Android Advertising ID and Apple iOS’s Advertising Identifier. This data is primarily used for advertising and analytics purposes, and is only associated with personally identifiable information where you have provided explicit consent. We respect your preferences regarding these technologies, and you can modify your settings at any time. For more information, you can contact us at support@portkey.finance, Google, or Apple directly.`,
+    content: `   We may collect information about your use of the platform through tools like Google Play’s Android Advertising ID and Apple iOS’s Advertising Identifier. This data is primarily used for advertising and analytics purposes, and is only associated with personally identifiable information where you have provided explicit consent. We respect your preferences regarding these technologies, and you can modify your settings at any time. For more information, you can contact us at info@fairyvault.com, Google, or Apple directly.`,
     isInnerHTML: true,
   },
   {
@@ -256,7 +256,7 @@ export const privacyPolicyContents: IPrivacyPolicyContents[] = [
   },
   {
     className: styles.fontS,
-    content: `If you wish to update any personal information you have provided to us, or if you believe that the data we hold is inaccurate, you may contact us directly at support@portkey.finance. We will take reasonable steps to update or correct your information as promptly as possible, subject to any applicable legal or regulatory obligations.`,
+    content: `If you wish to update any personal information you have provided to us, or if you believe that the data we hold is inaccurate, you may contact us directly at info@fairyvault.com. We will take reasonable steps to update or correct your information as promptly as possible, subject to any applicable legal or regulatory obligations.`,
   },
   {
     className: styles.fontL,
@@ -721,7 +721,7 @@ export const privacyPolicyContents: IPrivacyPolicyContents[] = [
   },
   {
     className: styles.fontS,
-    content: `<b>Email:</b> support@portkey.finance`,
+    content: `<b>Email:</b> info@fairyvault.com`,
     isInnerHTML: true,
   },
   {
