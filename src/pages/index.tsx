@@ -41,7 +41,6 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  return null;
   return (
     <div className="home-page">
       {/* <div>wfs</div> */}

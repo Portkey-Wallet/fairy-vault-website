@@ -9,6 +9,7 @@
   top: -102px;
   display: flex;
   flex-direction: column;
+  height: 1060px;
   .headerContainerBg {
     width: 100%;
     height: 1060px;
@@ -189,16 +190,24 @@
   position: absolute;
   top: 222px;
 }
+.phoneAndCarContainer {
+  position: relative;
+  height: 450vh;
+  top: -222px;
+  // background: red;
+}
 .phoneChangeContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
+  justify-content: center;
   position: sticky;
   width: 100%;
-  height: 3000px;
-  top: 20px;
-  margin-top: 886px;
+  // height: 1000px;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  // margin-top: 784px;
   // background-color: red;
   &.locked {
     position: fixed;
@@ -206,6 +215,13 @@
     z-index: 1000;
     max-width: 100vw;
     pointer-events: none;
+  }
+  .leftPart {
+    position: absolute;
+    left: 168px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 }
 .headerTitle {
@@ -277,5 +293,60 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+.phoneFeatureContainer {
+  position: relative;
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  border-radius: 16px;
+  border: 1px solid #414142;
+  background: #1F1F21;
+  width: 413px;
+  // height: 234px;
+
+/* Drop Shadow/300 */
+// box-shadow: 0 4 4 var(--sds-size-depth-negative-025) var(--sds-color-black-200), var(--sds-size-depth-0) var(--sds-size-depth-100) var(--sds-size-depth-100) var(--sds-size-depth-negative-025) var(--sds-color-black-100);
+  .phoneFeatureIcon {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+  }
+  .phoneFeatureTitle {
+    color: #FFFFFF;
+    /* Title Page */
+    font-family: 'BG';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 38.4px */
+    letter-spacing: -0.64px;
+    margin-right: 63px;
+    margin-bottom: 0 !important;
+    overflow: hidden;
+  }
+  .phoneFeatureSubtitle {
+    margin-top: 24px;
+    display: inline-flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    // gap: 8xp;
+    border-radius: 8px;
+    background: #414142;
+
+    color: #FFFFFF;
+
+    /* Single Line/Body Base */
+    font-family: 'SG';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
   }
 }

@@ -28,6 +28,10 @@ import floatIcon3 from './home/floatIcon3.png';
 import eoaScreen1 from './home/eoaScreen1.png';
 import eoaScreen2 from './home/eoaScreen2.png';
 import eoaScreen3 from './home/eoaScreen3.png';
+import ScreenHome from './home/ScreenHome.png';
+import ScreenFirst from './home/ScreenFirst.png';
+import ScreenSecond from './home/ScreenSecond.png';
+import ScreenThird from './home/ScreenThird.png';
 import phoneContainer from './home/phoneContainer.png';
 import addAd from './home/addAd.svg';
 import faceId from './home/faceId.svg';
@@ -142,6 +146,10 @@ export {
   eoaScreen1,
   eoaScreen2,
   eoaScreen3,
+  ScreenHome,
+  ScreenFirst,
+  ScreenSecond,
+  ScreenThird,
   iconFast,
   iconTime,
   iconCode,

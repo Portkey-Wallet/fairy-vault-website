@@ -10,7 +10,7 @@ import {
 } from 'assets/images';
 import CustomSvg from "components/CustomSvg";
 export default function DownloadSection() {
-  return <section>
+  return <section id="download" >
     <motion.div className={clsx(styles.downloadContainer, 'flex-column')} initial={INITIAL}
           whileInView={WHILE_IN_VIEW}
           viewport={VIEWPORT}

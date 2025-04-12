@@ -30,7 +30,7 @@ import CustomSvg from 'components/CustomSvg';
 
 export default function FeatureScreenSection() {
   return (
-    <section className={clsx(['section-container-80', styles.featureSection])}>
+    <section id="features" className={clsx(['section-container-80', styles.featureSection])}>
       <h1 className={styles.featureTitle}>Everything you need in one wallet</h1>
       <IntroductionSection
         title={'Robust security'}

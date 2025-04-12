@@ -28,7 +28,7 @@ const faqs = [
 ];
 export default function SecurityScreenSection() {
   return (
-    <section className={clsx(['section-container-80', styles.securitySection])}>
+    <section id="security" className={clsx(['section-container-80', styles.securitySection])}>
       <h1 className={styles.securityTitle}>Your security is our priority</h1>
       <div className={clsx('flex-row', 'gap-24', styles.introContainer)}>
         <SecurityIntroductionItem
