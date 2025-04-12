@@ -3,7 +3,7 @@ import styles from './styles.module.less';
 import clsx from "clsx";
 
 export default function FooterSection() {
-  return <section style={{marginTop: 160, marginBottom: 80}} className="section-container-80">
+  return <section style={{marginTop: 160, paddingBottom: 80}} className="section-container-80">
     <div className="flex-row-start-between">
       <div className="flex-column gap-78">
         <CommonImage  src={'logo.svg'} style={{ width: 180, height: 54, cursor: 'pointer' }}
