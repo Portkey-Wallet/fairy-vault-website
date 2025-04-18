@@ -8,14 +8,17 @@
 
 .navHeader {
   width: 100%;
-  height: 102px;
+  // height: 102px;
+  padding-top: 32px;
+  padding-bottom: 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
 }
 
 .navBlueHeader {
-  background: @bg-7;
+  background: transparent;
 }
 
 .navWhiteHeader {
@@ -45,7 +48,7 @@
 }
 
 .downloadButton {
-  width: 120px;
+  width: 142px;
   height: 48px !important;
   border-radius: 8px;
   border: 1px solid;
@@ -53,6 +56,7 @@
   align-items: center;
   justify-content: center;
   opacity: 1;
+  font-weight: 600 !important;
 }
 
 .menuIcon {
@@ -155,8 +159,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
   &:hover {
-    color: #007bff;
+    color: @font-8;
   }
 }
 
@@ -183,10 +188,21 @@
 }
 
 .downloadButton {
-
+  position: absolute !important;
+  right: 48px;
+  top: 32px;
+  z-index: 10000;
 }
 
-
+.leftLogo { 
+  width: 180px;
+  height: 54px; 
+  cursor: pointer;
+  position: absolute;
+  left: 48px;
+  top: 32px;
+  z-index: 10000000;
+}
 @media screen and (max-width: @divide-991) {
   .menuIcon {
     display: block;

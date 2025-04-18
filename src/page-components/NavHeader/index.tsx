@@ -59,59 +59,88 @@ export default function NavHeader({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <header
-      className={clsx(['flex-row-between', 'section-container-48', styles.navSticky, styles.navBlueHeader, className])}>
-      <div className={clsx([styles.navHeader])}>
-        <CommonImage
-          src={'logo.svg'}
-          style={{ width: 180, height: 54, cursor: 'pointer' }}
-          alt="portkeyLogo"
-          onClick={() => jumpOrScrollToTop(ROUTER.DEFAULT)}
-          priority
-        />
+    <>
+      <header
+        className={clsx([
+          'flex-row-between',
+          'section-container-48',
+          styles.navSticky,
+          styles.navBlueHeader,
+          className,
+        ])}>
+        <div className={clsx([styles.navHeader])}>
+          {/* <NavHeaderMobileMenu isOpen={isOpenMenu} headerNav={headerNav} callback={onCloseMenu} /> */}
 
-        {/* <NavHeaderMobileMenu isOpen={isOpenMenu} headerNav={headerNav} callback={onCloseMenu} /> */}
-
-        <div>
-          <div className={styles.frame}>
-            <div className={styles.textWrapper}   onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
-            >Home</div>
-            <div className={styles.textWrapper}   onClick={() => scrollToWithOffset('features', 102)}
-            >Features</div>
-            <div className={styles.textWrapper} onClick={() =>    scrollToWithOffset('security', 102)}>Security</div>
-            <div style={{ position: 'absolute', top: 40, right: 288, display: activeTab === 0 ? 'block' : 'none' }}>
-              <Image
+          <div className="flex-row-center-center">
+            <div className={styles.frame}>
+              <div
+                className={styles.textWrapper}
+                onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}>
+                Home
+              </div>
+              <div className={styles.textWrapper} onClick={() => scrollToWithOffset('features', 102)}>
+                Features
+              </div>
+              <div className={styles.textWrapper} onClick={() => scrollToWithOffset('security', 102)}>
+                Security
+              </div>
+              <div style={{ position: 'absolute', top: 40, right: 288, display: activeTab === 0 ? 'block' : 'none' }}>
+                <Image
                   className={styles.Vector}
                   alt="Vector"
                   src="https://c.animaapp.com/WvDHYKDy/img/vector-1.svg"
                   width={20}
                   height={2}
                 />
-            </div>
-            <div style={{ position: 'absolute', top: 40, right: 178, display: activeTab === 1 ? 'block' : 'none' }}>
-              <Image
+              </div>
+              <div style={{ position: 'absolute', top: 40, right: 178, display: activeTab === 1 ? 'block' : 'none' }}>
+                <Image
                   className={styles.Vector2}
                   alt="Vector"
                   src="https://c.animaapp.com/WvDHYKDy/img/vector-1.svg"
                   width={20}
                   height={2}
                 />
-            </div>
-            <div style={{ position: 'absolute', top: 40, right: 58, display: activeTab === 2 ? 'block' : 'none' }}>
-              <Image
+              </div>
+              <div style={{ position: 'absolute', top: 40, right: 58, display: activeTab === 2 ? 'block' : 'none' }}>
+                <Image
                   className={styles.Vector3}
                   alt="Vector"
                   src="https://c.animaapp.com/WvDHYKDy/img/vector-1.svg"
                   width={20}
                   height={2}
                 />
+              </div>
             </div>
           </div>
+          {/* <CommonImage
+            src={'logo.svg'}
+            style={{ width: 180, height: 54, cursor: 'pointer', position: 'absolute', left: 0 }}
+            alt="portkeyLogo"
+            onClick={() => jumpOrScrollToTop(ROUTER.DEFAULT)}
+            priority
+          />
+          <CommonButton
+            type="primaryOutline"
+            className={styles.downloadButton}
+            onClick={() => scrollToWithOffset('download', 102)}>
+            Download
+          </CommonButton> */}
         </div>
-        <CommonButton type="primaryOutline" className={styles.downloadButton}  onClick={() => scrollToWithOffset('download', 102)}>
-          Download
-        </CommonButton>
-      </div>
-    </header>
+      </header>
+      <CommonImage
+        src={'logo.svg'}
+        className={styles.leftLogo}
+        alt="portkeyLogo"
+        onClick={() => jumpOrScrollToTop(ROUTER.DEFAULT)}
+        priority
+      />
+      <CommonButton
+        type="primaryOutline"
+        className={styles.downloadButton}
+        onClick={() => scrollToWithOffset('download', 102)}>
+        Download
+      </CommonButton>
+    </>
   );
 }
