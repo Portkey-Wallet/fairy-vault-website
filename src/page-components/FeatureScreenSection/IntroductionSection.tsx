@@ -29,7 +29,7 @@ export default function IntroductionSection({
           return (
             <div key={index + item.description} className={clsx(['flex-row-center-center', styles.introDataContainer])}>
               <CommonImage src={item.icon} className={styles.miniIcon} />
-              <span>{item.description}</span>
+              <span className={styles.introContent}>{item.description}</span>
             </div>
           );
         })}

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { CSSProperties } from 'react';
+import { CSSProperties, MouseEventHandler } from 'react';
 import svgsList from '../../assets/svgs';
 import styles from './styles.module.less';
 export interface CustomSvgProps {
@@ -9,6 +9,8 @@ export interface CustomSvgProps {
   strokeColor?: string;
   style?: CSSProperties;
   onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 export default function CustomSvg({ type, className, fillColor, strokeColor, ...props }: CustomSvgProps) {
   let svgContent = svgsList[type];

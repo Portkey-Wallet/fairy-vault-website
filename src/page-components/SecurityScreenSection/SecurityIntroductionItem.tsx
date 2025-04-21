@@ -26,9 +26,11 @@ export default function SecurityIntroductionItem({
         src={iconName}
         layout="intrinsic"
         style={{
-          transform: 'scale(0.5)',
-          transformOrigin: 'center',
+          // transform: 'scale(0.5)',
+          // transformOrigin: 'center',
           display: 'inline-block',
+          width: 160,
+          height: 160,
         }}
       />
       {/* </div> */}

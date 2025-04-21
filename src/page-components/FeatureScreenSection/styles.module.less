@@ -6,12 +6,20 @@
   color: white;
   padding-bottom: 240px;
 }
+.featureSectionTop {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+}
 .featureTitle {
   color: white;
   font-family: 'BG';
   font-size: 72px;
   font-style: normal;
   font-weight: 700;
+  line-height: 120%; /* 86.4px */
+  letter-spacing: -2.16px;  
+  // width: 1280px;
 }
 .miniIcon {
   flex: none;
@@ -20,8 +28,8 @@
 }
 .largeIcon {
   flex: none;
-  width: 260px;
-  height: 260px;
+  width: 400px;
+  height: 320px;
 }
 .introContainer {
   display: flex;
@@ -32,6 +40,16 @@
   border: 1px solid #414142;
   background: #1F1F21;
   padding: 48px 64px;
+  // width: 1280px;
+  .introContent {
+    color: white;
+    /* Subtitle */
+    font-family: 'BG';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 28.8px */
+  }
 }
 .introDataContainer {
   margin-top: 16px;
@@ -46,6 +64,8 @@
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
+  line-height: 120%; /* 57.6px */
+  letter-spacing: -1.44px;
 }
 .featureSubTitle {
   color: white;
@@ -55,6 +75,8 @@
   font-weight: 700;
   margin-top: 160px;
   margin-bottom: 64px !important;
+  line-height: 120%; /* 57.6px */
+  letter-spacing: -1.44px;
 }
 .dappIcon {
   flex: 1;
@@ -69,3 +91,74 @@
     }
   }
 }
+.forestIconStyle {
+  &:hover {
+    svg {
+      path {
+        fill: #1B76E2;
+      }
+    }
+  }
+}
+.etransferIconStyle {
+  &:hover{
+    svg {
+      g g g:nth-of-type(1){
+        path {
+          fill: #285EFF;
+        }
+      }
+      g g g:nth-of-type(2){
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+}
+.tmrwDaoIconStyle {
+  &:hover {
+    svg {
+      path {
+        fill: #5D49F6;
+      }
+    }
+  }
+}
+.aeFinderIconStyle {
+  &:hover{
+    svg {
+      g g g path {
+        fill: white;
+      }
+      g g g path:nth-of-type(1){
+        fill: #195ED8;
+      }
+      g g g path:nth-of-type(6){
+        fill: #195ED8;
+      }
+    }
+  }
+}
+// .aelfScanIconStyle {
+//   &:hover{
+//     svg {
+//       path {
+//         fill: white;
+//       }
+//       path:nth-of-type(1){
+//         fill: #195ED8;
+//       }
+//       path:nth-of-type(2){
+//         fill: #195ED8;
+//       }
+//     }
+//   }
+// }
+// .etransferIconStyle:hover #Vector path {
+//   fill: #285EFF !important;
+// }
+
+// .etransferIconStyle:hover #Union path {
+//   fill: white !important;
+// }

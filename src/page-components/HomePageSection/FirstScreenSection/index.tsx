@@ -72,30 +72,25 @@ export default function FirstScreenSection({
   androidStoreUrl: string;
   apkS3Url: string;
 }) {
-  const [vh100, setVh100] = useState(0)
+  const [vh100, setVh100] = useState(0);
   const [scrollY, setScrollY] = useState(0);
-  const sectionRef = useRef(null)
-  const { scrollY: scrollYMotion } = useScroll()
+  const sectionRef = useRef(null);
+  const { scrollY: scrollYMotion } = useScroll();
 
   // const [viewport, setViewport] = useState({ height: 0, width: 0 })
-  
   const [screenStack, setScreenStack] = useState<number[]>([0]);
   const [direction, setDirection] = useState<'up' | 'down'>('down');
 
   const heightProgress1 = useTransform(
     scrollYMotion,
-    [0, 940, 940 + vh100 * 0.1, 940 + vh100 * 1.4, 940 + vh100 * 1.5],
+    [0, 940, 940 + vh100 * 0.5, 940 + vh100 * 1, 940 + vh100 * 1.5],
     [0, 0, 114, 114, 0],
   );
+  const opacity1 = useTransform(scrollYMotion, [0, 940, 940 + vh100 * 0.5, 940 + vh100 * 1.5], [0, 0, 1, 0]);
   const dynamicHeight1 = useTransform(heightProgress1, (value) => (value === 114 ? 'auto' : `${value}px`));
-  const smoothDynamicHeight1 = useSpring(heightProgress1, {
-    stiffness: 100,
-    damping: 30,
-    duration: 1,
-  });
   const marginTop1 = useTransform(
     scrollYMotion,
-    [0, 940, 940 + vh100 * 0.1, 940 + vh100 * 1.4, 940 + vh100 * 1.5],
+    [0, 940, 940 + vh100 * 0.5, 940 + vh100 * 1, 940 + vh100 * 1.5],
     [0, 0, 24, 24, 0],
   );
   const smoothMargin1 = useSpring(marginTop1, {
@@ -106,25 +101,28 @@ export default function FirstScreenSection({
 
   const heightProgress2 = useTransform(
     scrollYMotion,
-    [940 + vh100 * 1.5, 940 + vh100 * 1.6, 940 + vh100 * 2.9, 940 + vh100 * 3],
+    [940 + vh100 * 1.5, 940 + vh100 * 2, 940 + vh100 * 2.5, 940 + vh100 * 3],
     [0, 114, 114, 0],
   );
+  const opacity2 = useTransform(scrollYMotion, [940 + vh100 * 1.5, 940 + vh100 * 2, 940 + vh100 * 3], [0, 1, 0]);
+
   const dynamicHeight2 = useTransform(heightProgress2, (value) => (value === 114 ? 'auto' : `${value}px`));
   const marginTop2 = useTransform(
     scrollYMotion,
-    [940 + vh100 * 1.5, 940 + vh100 * 1.6, 940 + vh100 * 2.9, 940 + vh100 * 3],
+    [940 + vh100 * 1.5, 940 + vh100 * 2, 940 + vh100 * 2.5, 940 + vh100 * 3],
     [0, 24, 24, 0],
   );
 
   const heightProgress3 = useTransform(
     scrollYMotion,
-    [940 + vh100 * 3, 940 + vh100 * 3.1, 940 + vh100 * 4.4, 940 + vh100 * 4.5],
-    [0, 114, 114, 0],
+    [940 + vh100 * 3, 940 + vh100 * 3.5, 940 + vh100 * 4, 940 + vh100 * 4.5],
+    [0, 76, 76, 0],
   );
-  const dynamicHeight3 = useTransform(heightProgress3, (value) => (value === 114 ? 'auto' : `${value}px`));
+  const opacity3 = useTransform(scrollYMotion, [940 + vh100 * 3, 940 + vh100 * 3.5, 940 + vh100 * 4.5], [0, 1, 0]);
+  const dynamicHeight3 = useTransform(heightProgress3, (value) => (value === 76 ? 'auto' : `${value}px`));
   const marginTop3 = useTransform(
     scrollYMotion,
-    [940 + vh100 * 3, 940 + vh100 * 3.1, 940 + vh100 * 4.4, 940 + vh100 * 4.5],
+    [940 + vh100 * 3, 940 + vh100 * 3.5, 940 + vh100 * 4, 940 + vh100 * 4.5],
     [0, 24, 24, 0],
   );
 
@@ -132,10 +130,6 @@ export default function FirstScreenSection({
     const calculateVh = () => {
       const viewportHeight = window.innerHeight;
       setVh100(viewportHeight);
-      // setViewport({
-      //   height: window.innerHeight,
-      //   width: window.innerWidth
-      // })
     };
 
     calculateVh();
@@ -216,7 +210,11 @@ export default function FirstScreenSection({
                 <span className={styles.appStoreText}>Download for iOS</span>
               </div>
             </div>
-            <div className={clsx('flex-row-center-center', styles.containerAppStore)} onClick={() => {}}>
+            <div
+              className={clsx('flex-row-center-center', styles.containerAppStore)}
+              onClick={() => {
+                window.open('https://play.google.com/store/apps/details?id=com.portkey.fairyvault', '_blank');
+              }}>
               <CommonImage src={appstoreAndroid} className={styles.appStoreIcon} />
               <div className={styles.appStoreText}>Download for Android</div>
             </div>
@@ -226,7 +224,7 @@ export default function FirstScreenSection({
         <CommonImage src={floatIcon2} className={clsx(styles.floatIcon2, styles.iconFloating)} />
         <CommonImage src={floatIcon3} className={clsx(styles.floatIcon3, styles.iconFloating)} />
       </section>
-      <section className={styles.phoneAndCarContainer}  ref={sectionRef}>
+      <section className={styles.phoneAndCarContainer} ref={sectionRef}>
         <div className={clsx(styles.phoneChangeContainer)}>
           <motion.div
             className={styles.leftPart}
@@ -235,13 +233,14 @@ export default function FirstScreenSection({
             whileInView={WHILE_IN_VIEW}
             viewport={VIEWPORT}>
             <AnimatePresence>
-              <motion.div>
+              <motion.div exit={{ opacity: 0 }}>
                 <div className={styles.phoneFeatureContainer}>
                   <div>
                     <motion.h1
                       className={styles.phoneFeatureTitle}
                       style={{
                         height: dynamicHeight1,
+                        opacity: opacity1,
                       }}
                       transition={{
                         duration: 10,
@@ -263,6 +262,7 @@ export default function FirstScreenSection({
                 </div>
               </motion.div>
             </AnimatePresence>
+
             <AnimatePresence>
               <motion.div>
                 <div className={styles.phoneFeatureContainer}>
@@ -271,6 +271,7 @@ export default function FirstScreenSection({
                       className={styles.phoneFeatureTitle}
                       style={{
                         height: dynamicHeight2,
+                        opacity: opacity2,
                       }}>
                       Secure your wallet with biometric authentication
                     </motion.h1>
@@ -286,6 +287,7 @@ export default function FirstScreenSection({
                 </div>
               </motion.div>
             </AnimatePresence>
+
             <AnimatePresence>
               <motion.div>
                 <div className={styles.phoneFeatureContainer}>
@@ -294,6 +296,7 @@ export default function FirstScreenSection({
                       className={styles.phoneFeatureTitle}
                       style={{
                         height: dynamicHeight3,
+                        opacity: opacity3,
                       }}>
                       Start exploring the Web3 ecosystem
                     </motion.h1>
