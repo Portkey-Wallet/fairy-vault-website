@@ -86,7 +86,11 @@ export default function FirstScreenSection({
     [0, 940, 940 + vh100 * 0.5, 940 + vh100 * 1, 940 + vh100 * 1.5],
     [0, 0, 114, 114, 0],
   );
-  const opacity1 = useTransform(scrollYMotion, [0, 940, 940 + vh100 * 0.5, 940 + vh100 * 1.5], [0, 0, 1, 0]);
+  const opacity1 = useTransform(
+    scrollYMotion,
+    [0, 940, 940 + vh100 * 0.5, 940 + vh100 * 1, 940 + vh100 * 1.5],
+    [0, 0, 0, 1, 0],
+  );
   const dynamicHeight1 = useTransform(heightProgress1, (value) => (value === 114 ? 'auto' : `${value}px`));
   const marginTop1 = useTransform(
     scrollYMotion,
@@ -104,7 +108,11 @@ export default function FirstScreenSection({
     [940 + vh100 * 1.5, 940 + vh100 * 2, 940 + vh100 * 2.5, 940 + vh100 * 3],
     [0, 114, 114, 0],
   );
-  const opacity2 = useTransform(scrollYMotion, [940 + vh100 * 1.5, 940 + vh100 * 2, 940 + vh100 * 3], [0, 1, 0]);
+  const opacity2 = useTransform(
+    scrollYMotion,
+    [940 + vh100 * 1.5, 940 + vh100 * 2, 940 + vh100 * 2.5, 940 + vh100 * 3],
+    [0, 0, 1, 0],
+  );
 
   const dynamicHeight2 = useTransform(heightProgress2, (value) => (value === 114 ? 'auto' : `${value}px`));
   const marginTop2 = useTransform(
@@ -118,7 +126,11 @@ export default function FirstScreenSection({
     [940 + vh100 * 3, 940 + vh100 * 3.5, 940 + vh100 * 4, 940 + vh100 * 4.5],
     [0, 76, 76, 0],
   );
-  const opacity3 = useTransform(scrollYMotion, [940 + vh100 * 3, 940 + vh100 * 3.5, 940 + vh100 * 4.5], [0, 1, 0]);
+  const opacity3 = useTransform(
+    scrollYMotion,
+    [940 + vh100 * 3, 940 + vh100 * 3.5, 940 + vh100 * 4, 940 + vh100 * 4.5],
+    [0, 0, 1, 0],
+  );
   const dynamicHeight3 = useTransform(heightProgress3, (value) => (value === 76 ? 'auto' : `${value}px`));
   const marginTop3 = useTransform(
     scrollYMotion,
