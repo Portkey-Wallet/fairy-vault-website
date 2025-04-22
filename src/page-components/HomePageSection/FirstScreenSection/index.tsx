@@ -317,6 +317,7 @@ export default function FirstScreenSection() {
               height: 976,
               top: 0,
               position: 'sticky',
+              aspectRatio: 480 / 976,
               // scale: useTransform(scrollYProgress, [0, 1060], [1, 0.5]),
               // // scale: scrollYProgress,
               // x: scrollYProgress,
