@@ -14,7 +14,7 @@ export default function DownloadSection() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const userAgent = navigator.userAgent;
     setIsMobile(/iPhone|iPad|iPod|Android/i.test(userAgent));
   }, []);
   // const handleToggleAppleQRCode = () => {

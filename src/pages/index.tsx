@@ -46,14 +46,7 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
       <NavHeader />
       <div className="empty-container"></div>
 
-      <FirstScreenSection
-        type={uaType}
-        focusImg={s3Url + homeData?.focusImage?.filename_disk}
-        chromeStoreUrl={downloadResource?.extensionDownloadUrl || ''}
-        androidStoreUrl={downloadResource?.androidDownloadUrl || ''}
-        apkS3Url={downloadResource?.apkDownloadUrl || TMP_APK_S3_DOWNLOAD}
-        iosStoreUrl={downloadResource?.iosDownloadUrl || ''}
-      />
+      <FirstScreenSection />
       <FeatureScreenSection />
       <SecurityScreenSection />
       <DownloadSection />
