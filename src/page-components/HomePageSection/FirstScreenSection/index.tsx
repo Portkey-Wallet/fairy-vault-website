@@ -57,21 +57,7 @@ const variantSubtitle = (delayBase: number): Variants => {
     },
   };
 };
-export default function FirstScreenSection({
-  type,
-  focusImg,
-  chromeStoreUrl,
-  iosStoreUrl,
-  androidStoreUrl,
-  apkS3Url,
-}: {
-  type: DEVICE_TYPE;
-  focusImg: string;
-  chromeStoreUrl: string;
-  iosStoreUrl: string;
-  androidStoreUrl: string;
-  apkS3Url: string;
-}) {
+export default function FirstScreenSection() {
   const [vh100, setVh100] = useState(0);
   const [scrollY, setScrollY] = useState(0);
   const sectionRef = useRef(null);
@@ -207,7 +193,7 @@ export default function FirstScreenSection({
           <div>
             <div className={clsx('flex-row-center-center', styles.containerKeywords)}>
               <CommonImage src={verified} className={styles.iconVerify} />
-              <span className={styles.headerKeywords}>Magical,Secure,Effortless</span>
+              <span className={styles.headerKeywords}>Magical, Secure, Effortless</span>
             </div>
           </div>
           <h1 className={styles.headerTitle}>Your ultimate gateway to Web3</h1>
@@ -215,7 +201,7 @@ export default function FirstScreenSection({
             With FairyVault, you gain complete control over your aelf blockchain assets, ensuring top-level security
             while easily navigating the decentralised world.
           </span>
-          <div className={clsx('flex-row-center-center', 'margin-top-64', 'gap-24')}>
+          <div className={clsx('flex-row-center-center', 'margin-top-64', 'gap-24', styles.downloadButtonContainer)}>
             <div className={clsx('flex-row-center-center', styles.containerAppStore)} onClick={() => {}}>
               <div className="flex-row-center-center">
                 <CommonImage src={appstoreIos} className={styles.appStoreIcon} />

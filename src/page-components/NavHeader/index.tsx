@@ -13,6 +13,7 @@ import { ISecondMenu, ITopMenu } from 'types/nav';
 import HeaderMenuArrowSVG from 'page-components/SVGComponents/HeaderMenuArrowSVG';
 import CommonButton from 'components/CommonButton';
 import Image from 'next/image';
+import CustomSvg from 'components/CustomSvg';
 const scrollToWithOffset = (id: string, offset: number) => {
   const element = document.getElementById(id);
   if (element) {
@@ -30,17 +31,11 @@ export interface INavHeaderProps {
   type?: NAV_TYPE;
   path?: ROUTER;
   downloadIsButton?: boolean;
-  headerNav: Array<ITopMenu>;
+  headerNav?: Array<ITopMenu>;
   className?: string;
 }
 
-export default function NavHeader({
-  type = NAV_TYPE.BLUE,
-  path = ROUTER.DEFAULT,
-  downloadIsButton = false,
-  headerNav,
-  className,
-}: INavHeaderProps) {
+export default function NavHeader({ className }: INavHeaderProps) {
   const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
@@ -135,12 +130,17 @@ export default function NavHeader({
         onClick={() => jumpOrScrollToTop(ROUTER.DEFAULT)}
         priority
       />
-      <CommonButton
-        type="primaryOutline"
-        className={styles.downloadButton}
-        onClick={() => scrollToWithOffset('download', 102)}>
-        Download
-      </CommonButton>
+      <div className={styles.downloadButtonContainer}>
+        <CommonButton
+          type="primaryOutline"
+          className={styles.downloadButton}
+          onClick={() => scrollToWithOffset('download', 102)}>
+          Download
+        </CommonButton>
+        <div className={styles.menu}>
+          <CustomSvg type={'menu'} />
+        </div>
+      </div>
     </>
   );
 }

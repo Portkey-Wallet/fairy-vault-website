@@ -28,30 +28,32 @@ const faqs = [
 ];
 export default function SecurityScreenSection() {
   return (
-    <section id="security" className={clsx(['section-container-80', styles.securitySection])}>
-      <h1 className={styles.securityTitle}>Your security is our priority</h1>
-      <div className={clsx('flex-row', 'gap-24', styles.introContainer)}>
-        <SecurityIntroductionItem
-          iconName={Key}
-          content={'Complete user control over assets'}
-          variants={variantLeftToRight(1.5)}
-        />
-        <SecurityIntroductionItem
-          iconName={Lock}
-          content={'Advanced encryption protocols'}
-          variants={variantOpacity(1)}
-        />
-        <SecurityIntroductionItem
-          iconName={Database}
-          content={'Secure backup solutions'}
-          variants={variantRightToLeft(1.5)}
-        />
-      </div>
-      <h1 className={styles.securityTitle}>FAQ</h1>
-      <div className={clsx('flex-column', 'gap-32')}>
-        {faqs.map((faq, index) => (
-          <FAQCard key={index} question={faq.question} answer={faq.answer} />
-        ))}
+    <section id="security" className={clsx([styles.securitySection])}>
+      <div className={clsx([styles.securitySectionWrapper])}>
+        <h1 className={styles.securityTitle}>Your security is our priority</h1>
+        <div className={clsx('flex-row', 'gap-24', styles.introContainer, styles.scrollableContainer)}>
+          <SecurityIntroductionItem
+            iconName={Key}
+            content={'Complete user control over assets'}
+            variants={variantLeftToRight(1.5)}
+          />
+          <SecurityIntroductionItem
+            iconName={Lock}
+            content={'Advanced encryption protocols'}
+            variants={variantOpacity(1)}
+          />
+          <SecurityIntroductionItem
+            iconName={Database}
+            content={'Secure backup solutions'}
+            variants={variantRightToLeft(1.5)}
+          />
+        </div>
+        <h1 className={styles.securityTitle}>FAQ</h1>
+        <div className={clsx('flex-column', 'gap-32')}>
+          {faqs.map((faq, index) => (
+            <FAQCard key={index} question={faq.question} answer={faq.answer} />
+          ))}
+        </div>
       </div>
     </section>
   );

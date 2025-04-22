@@ -22,17 +22,7 @@ export default function SecurityIntroductionItem({
       viewport={VIEWPORT}>
       {/* <CustomSvg type={iconName} /> */}
       {/* <div style={{ width: '30%', height: '30%' }}> */}
-      <CommonImage
-        src={iconName}
-        layout="intrinsic"
-        style={{
-          // transform: 'scale(0.5)',
-          // transformOrigin: 'center',
-          display: 'inline-block',
-          width: 160,
-          height: 160,
-        }}
-      />
+      <CommonImage src={iconName} layout="intrinsic" className={styles.securityIcon} />
       {/* </div> */}
       <span className={styles.SecurityIntroText}>{content}</span>
     </motion.div>

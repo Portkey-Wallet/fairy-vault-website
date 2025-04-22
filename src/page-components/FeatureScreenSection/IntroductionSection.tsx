@@ -23,7 +23,7 @@ export default function IntroductionSection({
       whileInView={WHILE_IN_VIEW}
       viewport={VIEWPORT}
       className={styles.introContainer}>
-      <div className="flex-column-start">
+      <div className={clsx('flex-column-start', styles.titleAndContentWrapper)}>
         <span className={styles.introTitle}>{title}</span>
         {contentData.map((item, index) => {
           return (

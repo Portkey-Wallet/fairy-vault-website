@@ -43,8 +43,7 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
   }, []);
   return (
     <div className="home-page">
-      {/* <div>wfs</div> */}
-      <NavHeader type={NAV_TYPE.BLUE} path={ROUTER.DEFAULT} headerNav={headerNav} downloadIsButton />
+      <NavHeader />
       <div className="empty-container"></div>
 
       <FirstScreenSection

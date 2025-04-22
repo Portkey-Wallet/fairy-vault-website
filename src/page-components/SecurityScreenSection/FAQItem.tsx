@@ -18,18 +18,11 @@ export default function FAQCard({ question, answer }: { question: string; answer
         setIsOpen((prev) => !prev);
       }}>
       <div className={styles.faqHeader}>
-        <h3>{question}</h3>
-        <button
-          className={clsx(styles.toggleButton, { [styles.open]: isOpen })}
-          onClick={() => {
-            if (!isOpen) {
-              setIsCloseComplete(false);
-            }
-            setIsOpen((prev) => !prev);
-          }}>
+        <h3 className={styles.question}>{question}</h3>
+        <div className={clsx(styles.toggleButton, { [styles.open]: isOpen })}>
           {/* <span className={styles.icon}>{isOpen ? '−' : '+'}</span> */}
           <CustomSvg className={styles.icon} type={isOpen ? 'remove' : 'add'} />
-        </button>
+        </div>
       </div>
 
       <motion.div

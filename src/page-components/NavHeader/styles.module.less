@@ -186,12 +186,27 @@
   top: 52px;
   width: 20px;
 }
-
-.downloadButton {
+.menu {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  padding: 7px 4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  border-radius: 9999px;
+  background: #1F1F21;
+}
+.downloadButtonContainer {
   position: absolute !important;
   right: 48px;
   top: 32px;
   z-index: 10000;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
 .leftLogo { 
@@ -203,15 +218,37 @@
   top: 32px;
   z-index: 10000000;
 }
-@media screen and (max-width: @divide-991) {
-  .menuIcon {
-    display: block;
-  }
-  .menus {
+@media screen and (min-width: @divide-1024) {
+  .menu {
     display: none;
   }
 }
-
+@media screen and (max-width: @divide-1024) {
+  .leftLogo {
+    left: 24px;
+  }
+  .downloadButtonContainer {
+    right: 24px;
+  }
+  .navSticky {
+    display: none;
+  }
+}
+@media screen and (max-width: @divide-599){
+  .leftLogo {
+    left: 12px;
+    width: 131px;
+    height: 32px;
+  }
+  .downloadButtonContainer {
+    right: 12px;
+  }
+  .downloadButton {
+    // right: 12px;
+    width: 126px;
+    height: 40px;
+  }
+}
 .menuItem {
   .font-family-medium();
 }

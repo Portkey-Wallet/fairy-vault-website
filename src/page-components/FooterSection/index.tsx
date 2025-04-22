@@ -4,13 +4,12 @@ import clsx from 'clsx';
 
 export default function FooterSection() {
   return (
-    <section style={{ marginTop: 160, paddingBottom: 80 }} className="section-container-80">
-      <div className="flex-row-start-between">
+    <section className={styles.footerSection}>
+      <div className={styles.footerFirstPart}>
         <div className="flex-column gap-78">
           <CommonImage src={'logo.svg'} style={{ width: 180, height: 54, cursor: 'pointer' }} alt="portkeyLogo" />
-          <span className={styles.footerCopyright}>© 2025 FairyVault</span>
         </div>
-        <div className="flex-row-start">
+        <div className={clsx('flex-row-start', styles.width100Percent)}>
           <div className={clsx('flex-column gap-24', styles.width200)}>
             <span className={styles.footerTitle}>Support</span>
             <a
@@ -34,6 +33,7 @@ export default function FooterSection() {
           </div>
         </div>
       </div>
+      <span className={styles.footerCopyright}>© 2025 FairyVault</span>
     </section>
   );
 }

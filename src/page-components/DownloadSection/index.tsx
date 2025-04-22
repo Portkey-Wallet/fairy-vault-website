@@ -6,12 +6,49 @@ import { INITIAL, variantOpacity, VIEWPORT, WHILE_IN_VIEW } from 'constants/moti
 import clsx from 'clsx';
 import { appstoreAndroid, appstoreIos } from 'assets/images';
 import CustomSvg from 'components/CustomSvg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import QRCode from './QRCode';
 export default function DownloadSection() {
   const [showAppleQRCode, setShowAppleQRCode] = useState(false);
   const [showAndroidQRCode, setShowAndroidQRCode] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(userAgent));
+  }, []);
+  // const handleToggleAppleQRCode = () => {
+  //   setShowAppleQRCode(true);
+  // };
+  // const handleToggleAndroidQRCode = () => {
+  //   setShowAndroidQRCode(true);
+  //   console.log('wfs 3');
+  // };
+  useEffect(() => {
+    // const handleClickOutside = (event: MouseEvent) => {
+    //   const modal = document.querySelector(`.${styles.qrCodePopup}`);
+    //   if ((showAppleQRCode || showAndroidQRCode) && modal && !modal.contains(event.target as Node)) {
+    //     setShowAndroidQRCode(false);
+    //     setShowAppleQRCode(false);
+    //   }
+    // };
+
+    const handleScroll = () => {
+      setShowAndroidQRCode(false);
+      setShowAppleQRCode(false);
+    };
+
+    if (showAndroidQRCode || showAppleQRCode) {
+      // document.addEventListener('click', handleClickOutside);
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      // document.removeEventListener('click', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showAppleQRCode, showAndroidQRCode]);
+  console.log('wfs', isMobile, showAndroidQRCode, showAppleQRCode);
   return (
     <section id="download">
       <motion.div
@@ -20,49 +57,68 @@ export default function DownloadSection() {
         whileInView={WHILE_IN_VIEW}
         viewport={VIEWPORT}
         variants={variantOpacity(1)}>
-        <h1 className={styles.downloadTitle}>Get started with FairyVault Your gateway to the future of Web3.</h1>
-        <div className={clsx('flex-row-center-center', 'gap-24')}>
-          <div className={clsx('flex-row-center-center', styles.containerAppStore)} onClick={() => {}}>
-            {/* <div className="flex-row-center-center"> */}
-            <CommonImage src={appstoreIos} className={styles.appStoreIcon} />
-            <span className={styles.appStoreText}>Download for iOS</span>
-            {/* </div> */}
+        <div className={styles.downloadContainerLeft}>
+          <h1 className={styles.downloadTitle}>Get started with FairyVault Your gateway to the future of Web3.</h1>
+          <div className={clsx(styles.buttonContainer)}>
+            <div className={clsx('flex-row-center-center', styles.containerAppStore)} onClick={() => {}}>
+              {/* <div className="flex-row-center-center"> */}
+              <CommonImage src={appstoreIos} className={styles.appStoreIcon} />
+              <span className={styles.appStoreText}>Download for iOS</span>
+              {/* </div> */}
+            </div>
+            <div
+              className={styles.qrCodeContainer}
+              onMouseEnter={() => setShowAppleQRCode(true)}
+              onMouseLeave={() => setShowAppleQRCode(false)}>
+              <CustomSvg type="qrCode" className={styles.qrCode} />
+              {!isMobile && showAppleQRCode && (
+                <div className={styles.qrCodePopup}>
+                  <QRCode isAndroid={false} />
+                </div>
+              )}
+            </div>
           </div>
-          <div
-            className={styles.qrCodeContainer}
-            onMouseEnter={() => setShowAppleQRCode(true)}
-            onMouseLeave={() => setShowAppleQRCode(false)}>
-            <CustomSvg type="qrCode" className={styles.qrCode} />
-            {showAppleQRCode && (
-              <div className={styles.qrCodePopup}>
-                <QRCode isAndroid={false} />
-              </div>
-            )}
+          <div className={clsx(styles.buttonContainer2)}>
+            <div
+              className={clsx('flex-row-center-center', styles.containerAppStore)}
+              onClick={() => {
+                window.open('https://play.google.com/store/apps/details?id=com.portkey.fairyvault', '_blank');
+              }}>
+              <CommonImage src={appstoreAndroid} className={styles.appStoreIcon} />
+              <div className={styles.appStoreText}>Download for Android</div>
+            </div>
+            <div
+              className={styles.qrCodeContainer}
+              onMouseEnter={() => {
+                setShowAndroidQRCode(true);
+              }}
+              onMouseLeave={() => {
+                setShowAndroidQRCode(false);
+              }}>
+              <CustomSvg type="qrCode" className={styles.qrCode} />
+              {!isMobile && showAndroidQRCode && (
+                <div className={styles.qrCodePopup}>
+                  <QRCode isAndroid />
+                </div>
+              )}
+            </div>
           </div>
         </div>
-        <div className={clsx('flex-row-center-center', 'gap-24', 'margin-top-24')}>
-          <div
-            className={clsx('flex-row-center-center', styles.containerAppStore)}
-            onClick={() => {
-              window.open('https://play.google.com/store/apps/details?id=com.portkey.fairyvault', '_blank');
-            }}>
-            <CommonImage src={appstoreAndroid} className={styles.appStoreIcon} />
-            <div className={styles.appStoreText}>Download for Android</div>
-          </div>
-          <div
-            className={styles.qrCodeContainer}
-            onMouseEnter={() => setShowAndroidQRCode(true)}
-            onMouseLeave={() => setShowAndroidQRCode(false)}>
-            <CustomSvg type="qrCode" className={styles.qrCode} />
-            {showAndroidQRCode && (
-              <div className={styles.qrCodePopup}>
-                <QRCode isAndroid />
-              </div>
-            )}
-          </div>
+        <div className={styles.showQRCodeContainer}>
+          {isMobile && (showAndroidQRCode || showAppleQRCode) && (
+            // <div className={styles.qrCodeModal}>
+            <div className={styles.qrCodePopup}>
+              <QRCode isAndroid={showAndroidQRCode} />
+            </div>
+            // </div>
+          )}
         </div>
-        <CommonImage src={iPhone} layout="intrinsic" className={styles.iphoneBg} />
-        <CustomSvg type="downloadCoin" className={styles.downloadCoin} />
+        <div className={styles.downloadContainerRight}>
+          <CommonImage src={iPhone} layout="intrinsic" className={styles.iphoneBg} />
+          <CustomSvg type="downloadCoin" className={styles.downloadCoin} />
+        </div>
+
+        {/* <QRCode isAndroid={false} style={{ visibility: 'hidden' }} /> */}
       </motion.div>
     </section>
   );
