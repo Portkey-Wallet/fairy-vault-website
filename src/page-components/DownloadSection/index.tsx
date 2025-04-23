@@ -48,7 +48,7 @@ export default function DownloadSection() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [showAppleQRCode, showAndroidQRCode]);
-  console.log('wfs', isMobile, showAndroidQRCode, showAppleQRCode);
+
   return (
     <section id="download">
       <motion.div
