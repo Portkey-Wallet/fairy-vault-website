@@ -67,6 +67,12 @@ export default function FirstScreenSection() {
   const [screenStack, setScreenStack] = useState<number[]>([0]);
   const [direction, setDirection] = useState<'up' | 'down'>('down');
 
+  const translateYPercent = useTransform(
+    scrollYMotion,
+    [0, 940, 940 + vh100 * 0.3, 940 + vh100 * 0.5, 940 + vh100 * 1, 940 + vh100 * 1.2, 940 + vh100 * 1.5],
+    [0, 0, 0, 40, 40, 0, 0],
+  );
+  const dynamicTranslateYPercent1 = useTransform(translateYPercent, (value) => value - 40);
   const heightProgress1 = useTransform(
     scrollYMotion,
     [0, 940, 940 + vh100 * 0.5, 940 + vh100 * 1, 940 + vh100 * 1.5],
@@ -74,8 +80,8 @@ export default function FirstScreenSection() {
   );
   const opacity1 = useTransform(
     scrollYMotion,
-    [0, 940, 940 + vh100 * 0.5, 940 + vh100 * 1, 940 + vh100 * 1.5],
-    [0, 0, 0, 1, 0],
+    [0, 940, 940 + vh100 * 0.3, 940 + vh100 * 1, 940 + vh100 * 1.3, 940 + vh100 * 1.5],
+    [0, 0, 0, 1, 0, 0],
   );
   const dynamicHeight1 = useTransform(heightProgress1, (value) => (value === 114 ? 'auto' : `${value}px`));
   const marginTop1 = useTransform(
@@ -89,6 +95,12 @@ export default function FirstScreenSection() {
     duration: 1,
   });
 
+  const translateYPercent2 = useTransform(
+    scrollYMotion,
+    [940 + vh100 * 1.5, 940 + vh100 * 1.8, 940 + vh100 * 2, 940 + vh100 * 2.5, 940 + vh100 * 2.7, 940 + vh100 * 3],
+    [0, 0, 40, 40, 0, 0],
+  );
+  const dynamicTranslateYPercent2 = useTransform(translateYPercent2, (value) => value - 40);
   const heightProgress2 = useTransform(
     scrollYMotion,
     [940 + vh100 * 1.5, 940 + vh100 * 2, 940 + vh100 * 2.5, 940 + vh100 * 3],
@@ -96,10 +108,9 @@ export default function FirstScreenSection() {
   );
   const opacity2 = useTransform(
     scrollYMotion,
-    [940 + vh100 * 1.5, 940 + vh100 * 2, 940 + vh100 * 2.5, 940 + vh100 * 3],
-    [0, 0, 1, 0],
+    [940 + vh100 * 1.5, 940 + vh100 * 1.8, 940 + vh100 * 2.5, 940 + vh100 * 2.8, 940 + vh100 * 3],
+    [0, 0, 1, 0, 0],
   );
-
   const dynamicHeight2 = useTransform(heightProgress2, (value) => (value === 114 ? 'auto' : `${value}px`));
   const marginTop2 = useTransform(
     scrollYMotion,
@@ -107,6 +118,12 @@ export default function FirstScreenSection() {
     [0, 24, 24, 0],
   );
 
+  const translateYPercent3 = useTransform(
+    scrollYMotion,
+    [940 + vh100 * 3, 940 + vh100 * 3.3, 940 + vh100 * 3.5, 940 + vh100 * 4, 940 + vh100 * 4.2, 940 + vh100 * 4.5],
+    [0, 0, 40, 40, 0, 0],
+  );
+  const dynamicTranslateYPercent3 = useTransform(translateYPercent3, (value) => value - 40);
   const heightProgress3 = useTransform(
     scrollYMotion,
     [940 + vh100 * 3, 940 + vh100 * 3.5, 940 + vh100 * 4, 940 + vh100 * 4.5],
@@ -114,8 +131,8 @@ export default function FirstScreenSection() {
   );
   const opacity3 = useTransform(
     scrollYMotion,
-    [940 + vh100 * 3, 940 + vh100 * 3.5, 940 + vh100 * 4, 940 + vh100 * 4.5],
-    [0, 0, 1, 0],
+    [940 + vh100 * 3, 940 + vh100 * 3.3, 940 + vh100 * 4, 940 + vh100 * 4.3, 940 + vh100 * 4.5],
+    [0, 0, 1, 0, 0],
   );
   const dynamicHeight3 = useTransform(heightProgress3, (value) => (value === 76 ? 'auto' : `${value}px`));
   const marginTop3 = useTransform(
@@ -175,16 +192,26 @@ export default function FirstScreenSection() {
         setScreenStack((prev) => prev.slice(0, -1));
         setDirection('up');
       }
-    })
+    });
     return () => unsubscribe();
   }, [screenIndex, screenStack]);
-
+  console.log('wfs direction', direction);
   const springConfig = {
     stiffness: 150,
     damping: 30,
     mass: 0.5,
   };
-
+  // useEffect(() => {
+  //   translateYPercent.onChange((value) => {
+  //     console.log('WFS translateYPercent:', value);
+  //   });
+  //   heightProgress1.onChange((value) => {
+  //     console.log('WFS heightProgress1:', value);
+  //   });
+  //   dynamicTranslateYPercent1.onChange((value) => {
+  //     console.log('WFS dynamicTranslateYPercent1:', value);
+  //   });
+  // }, [heightProgress1, translateYPercent, dynamicTranslateYPercent1]);
   return (
     <>
       <section id="home" className={clsx(['section-container', styles.firstScreenSectionWrap])}>
@@ -239,9 +266,11 @@ export default function FirstScreenSection() {
                       style={{
                         height: dynamicHeight1,
                         opacity: opacity1,
+                        y: dynamicTranslateYPercent1,
+                        overflow: 'visible',
                       }}
                       transition={{
-                        duration: 10,
+                        ease: 'easeInOut',
                       }}>
                       Create or import your wallet in seconds
                     </motion.h1>
@@ -251,7 +280,7 @@ export default function FirstScreenSection() {
                         marginTop: smoothMargin1,
                       }}
                       transition={{
-                        duration: 10,
+                        ease: 'easeInOut',
                       }}>
                       Instant Wallet Access
                     </motion.span>
@@ -270,6 +299,11 @@ export default function FirstScreenSection() {
                       style={{
                         height: dynamicHeight2,
                         opacity: opacity2,
+                        y: dynamicTranslateYPercent2,
+                        overflow: 'visible',
+                      }}
+                      transition={{
+                        ease: 'easeInOut',
                       }}>
                       Secure your wallet with biometric authentication
                     </motion.h1>
@@ -277,6 +311,9 @@ export default function FirstScreenSection() {
                       className={styles.phoneFeatureSubtitle}
                       style={{
                         marginTop: marginTop2,
+                      }}
+                      transition={{
+                        ease: 'easeInOut',
                       }}>
                       Biometric Security
                     </motion.span>
@@ -295,6 +332,11 @@ export default function FirstScreenSection() {
                       style={{
                         height: dynamicHeight3,
                         opacity: opacity3,
+                        y: dynamicTranslateYPercent3,
+                        overflow: 'visible',
+                      }}
+                      transition={{
+                        ease: 'easeInOut',
                       }}>
                       Start exploring the Web3 ecosystem
                     </motion.h1>
@@ -302,6 +344,9 @@ export default function FirstScreenSection() {
                       className={styles.phoneFeatureSubtitle}
                       style={{
                         marginTop: marginTop3,
+                      }}
+                      transition={{
+                        ease: 'easeInOut',
                       }}>
                       Explore Web3
                     </motion.span>
