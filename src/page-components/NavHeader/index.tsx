@@ -33,26 +33,57 @@ export interface INavHeaderProps {
   downloadIsButton?: boolean;
   headerNav?: Array<ITopMenu>;
   className?: string;
+  homeRef?: React.RefObject<HTMLDivElement>;
+  featuresRef?: React.RefObject<HTMLDivElement>;
+  securityRef?: React.RefObject<HTMLDivElement>;
 }
 
-export default function NavHeader({ className }: INavHeaderProps) {
+export default function NavHeader({ className, homeRef, featuresRef, securityRef }: INavHeaderProps) {
   const [activeTab, setActiveTab] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      console.log('scrollPosition is', scrollPosition);
-      if (scrollPosition < 7042) {
-        setActiveTab(0); // Home
-      } else if (scrollPosition >= 7042 && scrollPosition < 9027) {
-        setActiveTab(1); // Features
-      } else {
-        setActiveTab(2); // Security
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+  //     console.log('scrollPosition is', scrollPosition);
+  //     if (scrollPosition < 7042) {
+  //       setActiveTab(0); // Home
+  //     } else if (scrollPosition >= 7042 && scrollPosition < 9027) {
+  //       setActiveTab(1); // Features
+  //     } else {
+  //       setActiveTab(2); // Security
+  //     }
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === homeRef?.current) {
+              setActiveTab(0); // Home
+            } else if (entry.target === featuresRef?.current) {
+              setActiveTab(1); // Features
+            } else if (entry.target === securityRef?.current) {
+              setActiveTab(2); // Security
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      },
+    );
+
+    if (homeRef?.current) observer.observe(homeRef.current);
+    if (featuresRef?.current) observer.observe(featuresRef.current);
+    if (securityRef?.current) observer.observe(securityRef.current);
+
+    return () => observer.disconnect();
+  }, [featuresRef, homeRef, securityRef]);
+
   return (
     <>
       <header

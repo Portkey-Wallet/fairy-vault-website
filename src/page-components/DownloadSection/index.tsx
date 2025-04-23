@@ -15,7 +15,10 @@ export default function DownloadSection() {
 
   useEffect(() => {
     const userAgent = navigator.userAgent;
-    setIsMobile(/iPhone|iPad|iPod|Android/i.test(userAgent));
+    const isMobileUserAgent = /iPhone|iPad|iPod|Android/i.test(userAgent);
+    const isMobileScreen = window.matchMedia('(max-width: 1023px)').matches;
+    console.log('userAgent', userAgent);
+    setIsMobile(isMobileUserAgent || isMobileScreen);
   }, []);
   // const handleToggleAppleQRCode = () => {
   //   setShowAppleQRCode(true);
@@ -59,6 +62,8 @@ export default function DownloadSection() {
         variants={variantOpacity(1)}>
         <div className={styles.downloadContainerLeft}>
           <h1 className={styles.downloadTitle}>Get started with FairyVault Your gateway to the future of Web3.</h1>
+          <h1 className={styles.downloadTitleMobile1}>Get started with FairyVault</h1>
+          <h1 className={styles.downloadTitleMobile2}>Your gateway to the future of Web3.</h1>
           <div className={clsx(styles.buttonContainer)}>
             <div className={clsx('flex-row-center-center', styles.containerAppStore)} onClick={() => {}}>
               {/* <div className="flex-row-center-center"> */}

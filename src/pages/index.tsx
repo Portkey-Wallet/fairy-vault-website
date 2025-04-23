@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useUserAgent } from 'hooks/useUserAgent';
 import BottomDownloadSection from 'page-components/HomePageSection/BottomDownloadSection';
 import DevelopGuideSection from 'page-components/HomePageSection/DevelopGuideSection';
@@ -25,7 +25,9 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
   const uaType = useUserAgent();
   const [scale, setScale] = useState(1);
   const [scrollY, setScrollY] = useState(0);
-
+  const homeRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
+  const securityRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -43,12 +45,12 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
   }, []);
   return (
     <div className="home-page">
-      <NavHeader />
+      <NavHeader homeRef={homeRef} featuresRef={featuresRef} securityRef={securityRef} />
       <div className="empty-container"></div>
 
-      <FirstScreenSection />
-      <FeatureScreenSection />
-      <SecurityScreenSection />
+      <FirstScreenSection homeRef={homeRef} />
+      <FeatureScreenSection featuresRef={featuresRef} />
+      <SecurityScreenSection securityRef={securityRef} />
       <DownloadSection />
       <FooterSection />
       {/* <DAppSection title={homeData?.dAppSectionTitle} dAppList={homeData?.dAppList} />

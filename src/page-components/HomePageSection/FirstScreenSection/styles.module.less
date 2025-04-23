@@ -194,6 +194,23 @@
   width: 100%;
   z-index: 100;
 }
+.phoneAndCarMobileContainer {
+  position: relative;
+  // height: 30vh;
+  top: -472px;
+  // background: red;
+  .leftPart {
+    // position: absolute;
+    // left: 168px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .phoneFeatureContainer {
+    width: 100%;
+    margin: 0px 24px;
+  }
+}
 .phoneAndCarContainer {
   position: relative;
   height: 450vh;
@@ -225,6 +242,9 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    &:first-child {
+      margin-bottom: 80px;
+    }
   }
 }
 .headerTitle {
@@ -400,6 +420,40 @@
       height: 24px;
     }
   }
+  .phoneAndCarMobileContainer {
+    // .leftPart {
+    //   // position: absolute;
+    //   // left: 168px;
+    //   display: flex;
+    //   flex-direction: column;
+    //   gap: 24px;
+    // }
+    top: -392px;
+    .phoneFeatureContainer {
+      width: 100%;
+      margin: 0px 16px;
+    }
+  }
+  .mobileTopContainer {
+    width: 276px;
+    height: 560px;
+    position: relative;
+    aspect-ratio: 0.49;
+    align-self: center;
+    margin-bottom: 24px;
+  }
+  .mobileScreenImg {
+    position: absolute;
+    width: 247px;
+    height: 534px;
+    top: 11.92px;
+    left: 14.44px;
+    aspect-ratio: 276/ 560;
+    overflow: hidden;
+  }
+  .imgRadius {
+    border-radius: 40px;
+  }
 }
 @media screen and (max-width: @divide-1023) and (min-width: @divide-600){
   .headerTitle {
@@ -408,5 +462,37 @@
   .headerSubtitle {
     width: 552px;
     font-size: 16px;
+  }
+  .phoneAndCarMobileContainer {
+    // .leftPart {
+    //   // position: absolute;
+    //   // left: 168px;
+    //   display: flex;
+    //   flex-direction: column;
+    //   gap: 24px;
+    // }
+    .phoneFeatureContainer {
+      width: 100%;
+      margin: 0px 24px;
+    }
+  }
+  .mobileTopContainer {
+    width: 315px;
+    height: 640px;
+    position: relative;
+    aspect-ratio: 0.49;
+    align-self: center;
+    margin-bottom: 56px;
+  }
+  .mobileScreenImg {
+    position: absolute;
+    width: 89.52%;
+    top: 13.62px;
+    left: 16.49px;
+    aspect-ratio: 281.77 / 610.62;
+    overflow: hidden;
+  }
+  .imgRadius {
+    border-radius: 40px;
   }
 }

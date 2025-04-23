@@ -115,7 +115,7 @@
   // margin: 0;
 }
 .dappIconSvg {
-  &:hover {
+  &:hover, &:active {
     svg {
       path {
         fill: white;
@@ -124,7 +124,7 @@
   }
 }
 .forestIconStyle {
-  &:hover {
+  &:hover, &:active  {
     svg {
       path {
         fill: #1B76E2;
@@ -133,7 +133,7 @@
   }
 }
 .etransferIconStyle {
-  &:hover{
+  &:hover, &:active {
     svg {
       g g g:nth-of-type(1){
         path {
@@ -149,7 +149,7 @@
   }
 }
 .tmrwDaoIconStyle {
-  &:hover {
+  &:hover, &:active {
     svg {
       path {
         fill: #5D49F6;
@@ -158,7 +158,7 @@
   }
 }
 .aeFinderIconStyle {
-  &:hover{
+  &:hover, &:active {
     svg {
       g g g path {
         fill: white;
@@ -205,6 +205,7 @@
 @media screen and (max-width: @divide-1023) and (min-width: @divide-600){
   .featureSection {
     padding: 0px 24px 120px;
+    top: -232px;
     .featureTitle {
       font-size: 56px;
       margin-bottom: 32px;
@@ -225,6 +226,7 @@
         flex: none;
         width: 300px;
         height: 240px;
+        margin-top: 32px;
       }
       .introDataContainer {
         margin-top: 16px;
@@ -255,6 +257,7 @@
   }
   .featureSection {
     padding: 0px 16px 80px;
+    top: -272px;
     .featureTitle {
       font-size: 36px;
       margin-bottom: 24px;
@@ -280,6 +283,7 @@
         flex: none;
         width: 250px;
         height: 200px;
+        margin-top: 32px;
       }
       .introDataContainer {
         margin-top: 12px;

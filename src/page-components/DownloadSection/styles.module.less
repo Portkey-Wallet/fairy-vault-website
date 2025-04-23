@@ -1,10 +1,10 @@
 @import '/src/assets/theme/color.less';
 @import '/src/assets/theme/constants.less';
-// .downloadSection {
-//   z-index: 1000;
-//   overflow: visible;
-//   position: relative;
-// }
+.downloadSection {
+  z-index: 1000;
+  overflow-x: hidden;
+  position: relative;
+}
 .downloadContainer {
   margin-top: 98px;
   height: 652px;
@@ -29,6 +29,7 @@
   margin-top: 160px;
   position: relative;
   overflow: visible;
+  // width: 760px;
   // min-width: 760px;
 }
 .downloadContainerRight {
@@ -48,6 +49,16 @@
   bottom: -7px;
 }
 .downloadTitle {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 64px;
+  line-height: 120%;
+  letter-spacing: -1.44px;
+  width: 760px;
+}
+.downloadTitleMobile1, .downloadTitleMobile2 {
+  display: none;
   color: white;
   font-size: 48px;
   font-weight: 700;
@@ -96,7 +107,7 @@
   background: #303030;
   position: relative;
   cursor: pointer;
-  &:hover {
+  &:hover :active {
     cursor: pointer;
     svg {
       path {
@@ -177,12 +188,32 @@
   width: 100%;
 }
 @media screen and (max-width: @divide-1439) and (min-width: @divide-1024){
-  .downloadContainerLeft {
-    min-width: 580px;
+  // .downloadContainerLeft {
+  //   min-width: 580px;
+  // }
+  .downloadTitle {
+    width: 580px;
   }
 }
 
 @media screen and (max-width: @divide-1023){
+  .downloadContainerLeft {
+    align-self: center;
+    align-items: center;
+  }
+  .downloadTitleMobile1, .downloadTitleMobile2 {
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .downloadTitleMobile1 {
+    margin-bottom: 0px;
+  }
+  .downloadTitle {
+    display: none;
+  }
   .downloadContainer {
     flex-direction: column;
     height: auto;
@@ -240,9 +271,6 @@
   }
   .downloadContainerLeft {
     margin: 64px 20px 0px;
-    .downloadTitle {
-      font-size: 36px;
-    }
     .buttonContainer {
       justify-content: center;
     }
@@ -289,9 +317,9 @@
   }
   .downloadContainerLeft {
     margin: 64px 16px 0px;
-    .downloadTitle {
-      font-size: 36px;
-    }
+    // .downloadTitle {
+    //   font-size: 36px;
+    // }
     .buttonContainer {
       justify-content: center;
     }

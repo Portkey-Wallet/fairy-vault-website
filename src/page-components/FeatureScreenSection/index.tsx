@@ -19,11 +19,11 @@ import { Divider } from 'antd';
 import CustomSvg from 'components/CustomSvg';
 import { useState } from 'react';
 
-export default function FeatureScreenSection() {
+export default function FeatureScreenSection({ featuresRef }: { featuresRef: React.RefObject<HTMLDivElement> }) {
   const [isAelfScanHovered, setIsAelfScanHovered] = useState(false);
 
   return (
-    <section id="features" className={clsx([styles.featureSection])}>
+    <section id="features" className={clsx([styles.featureSection])} ref={featuresRef}>
       <div className={styles.featureSectionWrapper}>
         <div className={clsx(styles.featureSectionTop)}>
           <h1 className={styles.featureTitle}>Everything you need in one wallet</h1>

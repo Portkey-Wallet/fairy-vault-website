@@ -26,9 +26,9 @@ const faqs = [
       'Yes! FairyVault is designed to seamlessly connect with decentralized applications (dApps) on the aelf blockchain. Simply open the app, navigate to the dApp browser, and connect with your favorite aelf-based games, marketplaces, and DeFi protocols with a single tap.',
   },
 ];
-export default function SecurityScreenSection() {
+export default function SecurityScreenSection({ securityRef }: { securityRef: React.RefObject<HTMLDivElement> }) {
   return (
-    <section id="security" className={clsx([styles.securitySection])}>
+    <section id="security" className={clsx([styles.securitySection])} ref={securityRef}>
       <div className={clsx([styles.securitySectionWrapper])}>
         <h1 className={styles.securityTitle}>Your security is our priority</h1>
         <div className={clsx('flex-row', 'gap-24', styles.introContainer, styles.scrollableContainer)}>
@@ -49,7 +49,7 @@ export default function SecurityScreenSection() {
           />
         </div>
         <h1 className={styles.securityTitle}>FAQ</h1>
-        <div className={clsx('flex-column', 'gap-32')}>
+        <div className={clsx('flex-column', 'gap-32', styles.faqs)}>
           {faqs.map((faq, index) => (
             <FAQCard key={index} question={faq.question} answer={faq.answer} />
           ))}

@@ -17,7 +17,7 @@ export default function MediaKit({
 }: INavPage & { mediaKitData: IMediaKitPage }) {
   return (
     <div className={styles.mediaKit}>
-      <NavHeader type={NAV_TYPE.WHITE} path={ROUTER.MEDIA_KIT} downloadIsButton headerNav={headerNav} />
+      {/* <NavHeader type={NAV_TYPE.WHITE} path={ROUTER.MEDIA_KIT} downloadIsButton headerNav={headerNav} /> */}
 
       <MediaKitFirstScreen
         title={mediaKitData.title}
