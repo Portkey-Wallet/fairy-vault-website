@@ -85,7 +85,7 @@ export default function NavHeader({ className }: INavHeaderProps) {
                   alt="Vector"
                   src="https://c.animaapp.com/WvDHYKDy/img/vector-1.svg"
                   width={20}
-                  height={2}
+                  height={7}
                 />
               </div>
               <div style={{ position: 'absolute', top: 40, right: 178, display: activeTab === 1 ? 'block' : 'none' }}>
@@ -94,7 +94,7 @@ export default function NavHeader({ className }: INavHeaderProps) {
                   alt="Vector"
                   src="https://c.animaapp.com/WvDHYKDy/img/vector-1.svg"
                   width={20}
-                  height={2}
+                  height={7}
                 />
               </div>
               <div style={{ position: 'absolute', top: 40, right: 58, display: activeTab === 2 ? 'block' : 'none' }}>
@@ -103,7 +103,7 @@ export default function NavHeader({ className }: INavHeaderProps) {
                   alt="Vector"
                   src="https://c.animaapp.com/WvDHYKDy/img/vector-1.svg"
                   width={20}
-                  height={2}
+                  height={7}
                 />
               </div>
             </div>

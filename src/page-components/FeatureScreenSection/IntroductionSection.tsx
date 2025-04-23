@@ -27,7 +27,13 @@ export default function IntroductionSection({
         <span className={styles.introTitle}>{title}</span>
         {contentData.map((item, index) => {
           return (
-            <div key={index + item.description} className={clsx(['flex-row-center-center', styles.introDataContainer])}>
+            <div
+              key={index + item.description}
+              className={clsx([
+                'flex-row-center-center',
+                styles.introDataContainer,
+                index === 0 && styles.marginTop32,
+              ])}>
               <CommonImage src={item.icon} className={styles.miniIcon} />
               <span className={styles.introContent}>{item.description}</span>
             </div>

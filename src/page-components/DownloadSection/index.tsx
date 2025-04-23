@@ -50,7 +50,7 @@ export default function DownloadSection() {
   }, [showAppleQRCode, showAndroidQRCode]);
 
   return (
-    <section id="download">
+    <section id="download" className={styles.downloadSection}>
       <motion.div
         className={clsx(styles.downloadContainer, 'flex-column')}
         initial={INITIAL}
@@ -123,3 +123,16 @@ export default function DownloadSection() {
     </section>
   );
 }
+{/* <div className="a0">
+  <div className="a1">
+    <div>
+      <div>
+        <div className='a4'>
+          <div className='a3'></div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  <div className="a2"> </div>
+</div>; */}

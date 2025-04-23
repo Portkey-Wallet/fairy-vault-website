@@ -1,11 +1,16 @@
 @import '/src/assets/theme/color.less';
 @import '/src/assets/theme/constants.less';
+// .downloadSection {
+//   z-index: 1000;
+//   overflow: visible;
+//   position: relative;
+// }
 .downloadContainer {
   margin-top: 98px;
   height: 652px;
   width: 100vw;
   position: relative;
-  // background: red;
+  background: #1F1F21;
   padding: 0px 0px 0px 80px;
   display: flex;
   align-items: flex-start;
@@ -14,11 +19,16 @@
   flex-direction: row;
   overflow: hidden;
   justify-content: space-between;
+  // z-index: 100;
+  position: relative;
+  overflow: visible;
 }
 .downloadContainerLeft {
   // display: flex;
   // flex-direction: column;
   margin-top: 160px;
+  position: relative;
+  overflow: visible;
   // min-width: 760px;
 }
 .downloadContainerRight {
@@ -118,7 +128,8 @@
   padding: 16px;
   border-radius: 16px;
   border: 1px solid #848485;
-  z-index: 10;
+  overflow: visible;
+  z-index: 100;
   .popupQrCodeContainer {
     display: flex;
     flex-direction: column;
@@ -158,6 +169,8 @@
   gap: 24px;
 
   margin-top: 24px;
+  position: relative;
+  overflow: visible;
 }
 .showQRCodeContainer {
   position: relative;
@@ -314,16 +327,16 @@
 
 
 
-.qrCodeModal {
-  position: fixed;
-  top: 0;
-  left: 10px;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
+// .qrCodeModal {
+//   position: fixed;
+//   top: 0;
+//   left: 10px;
+//   width: 100vw;
+//   height: 100vh;
+//   background: rgba(0, 0, 0, 0.5);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 1000;
+// }
 
