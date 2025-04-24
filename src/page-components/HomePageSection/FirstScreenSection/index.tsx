@@ -390,7 +390,123 @@ export default function FirstScreenSection({ homeRef }: { homeRef: React.RefObje
       ) : (
         <section className={styles.phoneAndCarContainer}>
           <div className={clsx(styles.phoneChangeContainer)}>
-            <motion.div
+            <div
+              style={{
+                position: 'absolute',
+                top: '50svh',
+                left: '50svw',
+                width: 20,
+                height: 20,
+                transform: 'translate(-50%, -50%)',
+                background: 'transparent',
+              }}>
+              <motion.div
+                className={styles.leftPart1}
+                variants={variantLeftToRight(2)}
+                initial={INITIAL}
+                whileInView={WHILE_IN_VIEW}
+                viewport={VIEWPORT}>
+                <AnimatePresence>
+                  <motion.div exit={{ opacity: 0 }}>
+                    <div className={styles.phoneFeatureContainer}>
+                      <div>
+                        <motion.h1
+                          className={styles.phoneFeatureTitle}
+                          style={{
+                            height: dynamicHeight1,
+                            opacity: opacity1,
+                            y: dynamicTranslateYPercent1,
+                            overflow: 'visible',
+                          }}
+                          transition={{
+                            ease: 'easeInOut',
+                          }}>
+                          Create or import your wallet in seconds
+                        </motion.h1>
+                        <motion.span
+                          className={styles.phoneFeatureSubtitle}
+                          style={{
+                            marginTop: smoothMargin1,
+                          }}
+                          transition={{
+                            ease: 'easeInOut',
+                          }}>
+                          Instant Wallet Access
+                        </motion.span>
+                      </div>
+                      <CustomSvg type="keyIcon" className={styles.phoneFeatureIcon}/>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+
+                <AnimatePresence>
+                  <motion.div>
+                    <div className={styles.phoneFeatureContainer}>
+                      <div>
+                        <motion.h1
+                          className={styles.phoneFeatureTitle}
+                          style={{
+                            height: dynamicHeight2,
+                            opacity: opacity2,
+                            y: dynamicTranslateYPercent2,
+                            overflow: 'visible',
+                          }}
+                          transition={{
+                            ease: 'easeInOut',
+                          }}>
+                          Secure your wallet with biometric authentication
+                        </motion.h1>
+                        <motion.span
+                          className={styles.phoneFeatureSubtitle}
+                          style={{
+                            marginTop: marginTop2,
+                          }}
+                          transition={{
+                            ease: 'easeInOut',
+                          }}>
+                          Biometric Security
+                        </motion.span>
+                      </div>
+                      <CustomSvg type="faceIdIcon" className={styles.phoneFeatureIcon}/>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+
+                <AnimatePresence>
+                  <motion.div>
+                    <div className={styles.phoneFeatureContainer}>
+                      <div>
+                        <motion.h1
+                          className={styles.phoneFeatureTitle}
+                          style={{
+                            height: dynamicHeight3,
+                            opacity: opacity3,
+                            y: dynamicTranslateYPercent3,
+                            overflow: 'visible',
+                          }}
+                          transition={{
+                            ease: 'easeInOut',
+                          }}>
+                          Start exploring the Web3 ecosystem
+                        </motion.h1>
+                        <motion.span
+                          className={styles.phoneFeatureSubtitle}
+                          style={{
+                            marginTop: marginTop3,
+                          }}
+                          transition={{
+                            ease: 'easeInOut',
+                          }}>
+                          Explore Web3
+                        </motion.span>
+                      </div>
+                      <CustomSvg type="connectSiteIcon" className={styles.phoneFeatureIcon} />
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+            </div>
+            {/* <motion.div
               className={styles.leftPart}
               variants={variantLeftToRight(2)}
               initial={INITIAL}
@@ -494,13 +610,13 @@ export default function FirstScreenSection({ homeRef }: { homeRef: React.RefObje
                   </div>
                 </motion.div>
               </AnimatePresence>
-            </motion.div>
+            </motion.div> */}
             <motion.div
               style={{
                 width: 480,
                 height: 976,
                 top: 0,
-                position: 'sticky',
+                position: 'relative',
                 aspectRatio: 480 / 976,
                 // scale: useTransform(scrollYProgress, [0, 1060], [1, 0.5]),
                 // // scale: scrollYProgress,
@@ -508,7 +624,7 @@ export default function FirstScreenSection({ homeRef }: { homeRef: React.RefObje
                 // y: useTransform(progress1, [0, 1], ["0%", "-10%"]),
               }}
               animate={{
-                x: scrollY / 2 > 240 ? 240 : scrollY / 2,
+                x: scrollY / 2 > 300 ? 300 : scrollY / 2,
                 scale: 1 - scrollY / 1000 < 0.75 ? 0.75 : 1 - scrollY / 1000,
               }}
               transition={{ type: 'spring', stiffness: 50 }}>
