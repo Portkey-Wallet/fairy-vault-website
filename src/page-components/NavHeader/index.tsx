@@ -73,15 +73,23 @@ export default function NavHeader({ className, homeRef, featuresRef, securityRef
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.1,
       },
     );
 
-    if (homeRef?.current) observer.observe(homeRef.current);
-    if (featuresRef?.current) observer.observe(featuresRef.current);
-    if (securityRef?.current) observer.observe(securityRef.current);
+    if (homeRef?.current) {
+      observer.observe(homeRef.current);
+    }
+    if (featuresRef?.current) {
+      observer.observe(featuresRef.current);
+    }
+    if (securityRef?.current) {
+      observer.observe(securityRef.current);
+    }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [featuresRef, homeRef, securityRef]);
 
   return (

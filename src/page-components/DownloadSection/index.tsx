@@ -61,7 +61,10 @@ export default function DownloadSection() {
         viewport={VIEWPORT}
         variants={variantOpacity(1)}>
         <div className={styles.downloadContainerLeft}>
-          <h1 className={styles.downloadTitle}>Get started with FairyVault Your gateway to the future of Web3.</h1>
+          <h1 className={styles.downloadTitle}>
+            Get started with FairyVault <br />
+            Your gateway to the future of Web3.
+          </h1>
           <h1 className={styles.downloadTitleMobile1}>Get started with FairyVault</h1>
           <h1 className={styles.downloadTitleMobile2}>Your gateway to the future of Web3.</h1>
           <div className={clsx(styles.buttonContainer)}>

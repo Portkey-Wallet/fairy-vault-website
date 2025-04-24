@@ -158,8 +158,10 @@
 }
 @media screen and (max-width: @divide-1023) and (min-width: @divide-600){
   .scrollableContainer > * {
+    &:first-child {
+      margin-left: 24px;
+    }
     min-width: 309.33px;
-    margin-left: 24px;
   }
   .SecurityIntroContainer {
     width: 309.33px;
@@ -186,10 +188,12 @@
 }
 @media screen and (max-width: @divide-599){
   .scrollableContainer > * {
+    &:first-child {
+      margin-left: 16px;
+    }
     // flex: 1 1 33%; 
     // max-width: 400px;
     min-width: 240px !important;
-    margin-left: 16px;
   }
   .SecurityIntroContainer {
     width: 240px;
