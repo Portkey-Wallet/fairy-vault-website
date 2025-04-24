@@ -4,8 +4,18 @@ import styles from './styles.module.less';
 import clsx from 'clsx';
 import CustomSvg from 'components/CustomSvg';
 
-export default function FAQCard({ question, answer }: { question: string; answer: string }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function FAQCard({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+}: {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  // const [isOpen, setIsOpen] = useState(false);
   const [isCloseComplete, setIsCloseComplete] = useState(true);
 
   return (
@@ -15,7 +25,8 @@ export default function FAQCard({ question, answer }: { question: string; answer
         if (!isOpen) {
           setIsCloseComplete(false);
         }
-        setIsOpen((prev) => !prev);
+        // setIsOpen((prev) => !prev);
+        onToggle();
       }}>
       <div className={styles.faqHeader}>
         <h3 className={styles.question}>{question}</h3>

@@ -4,6 +4,7 @@ import SecurityIntroductionItem from './SecurityIntroductionItem';
 import { Key, Lock, Database } from 'assets/images';
 import { variantLeftToRight, variantOpacity, variantRightToLeft } from 'constants/motion';
 import FAQCard from './FAQItem';
+import { useState } from 'react';
 const faqs = [
   {
     question: 'What is an EOA wallet and why do I need one for aelf?',
@@ -27,6 +28,7 @@ const faqs = [
   },
 ];
 export default function SecurityScreenSection({ securityRef }: { securityRef: React.RefObject<HTMLDivElement> }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <section id="security" className={clsx([styles.securitySection])} ref={securityRef}>
       <div className={clsx([styles.securitySectionWrapper])}>
@@ -51,7 +53,13 @@ export default function SecurityScreenSection({ securityRef }: { securityRef: Re
         <h1 className={styles.securityTitle}>FAQ</h1>
         <div className={clsx('flex-column', 'gap-32', styles.faqs)}>
           {faqs.map((faq, index) => (
-            <FAQCard key={index} question={faq.question} answer={faq.answer} />
+            <FAQCard
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+            />
           ))}
         </div>
       </div>

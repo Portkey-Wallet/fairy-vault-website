@@ -2,8 +2,8 @@
 @import '/src/assets/theme/constants.less';
 .downloadSection {
   z-index: 1000;
-  overflow-x: hidden;
-  position: relative;
+  // overflow: visible;
+  // position: relative;
 }
 .downloadContainer {
   margin-top: 98px;
@@ -35,6 +35,8 @@
 .downloadContainerRight {
   position: relative;
   margin-top: 80px;
+  overflow: hidden;
+  margin-left: -195px;
 }
 .iphoneBg {
   // position: absolute;
@@ -141,7 +143,7 @@
   border-radius: 16px;
   border: 1px solid #848485;
   overflow: visible;
-  z-index: 100;
+  z-index: 10001;
   .popupQrCodeContainer {
     display: flex;
     flex-direction: column;
@@ -187,6 +189,7 @@
 .showQRCodeContainer {
   position: relative;
   width: 100%;
+  display: none;
 }
 @media screen and (max-width: @divide-1439) and (min-width: @divide-1024){
   // .downloadContainerLeft {
@@ -198,6 +201,9 @@
 }
 
 @media screen and (max-width: @divide-1023){
+  .downloadSection {
+    overflow: hidden;
+  }
   .downloadContainerLeft {
     align-self: center;
     align-items: center;
@@ -267,6 +273,9 @@
 }
 
 @media screen and (max-width: @divide-1023) and (min-width: @divide-600){
+  .showQRCodeContainer {
+    display: block;
+  }
   .downloadSection {
     top: -32px;
   }
@@ -307,6 +316,7 @@
   .downloadContainerRight {
     margin-top: 123px;
     align-self: center;
+    margin-left: 0px;
   }
   .qrCodePopup {
     position: absolute;
@@ -352,6 +362,7 @@
   .downloadContainerRight {
     margin-top: 80px;
     align-self: center;
+    margin-left: 0px;
   }
 }
 

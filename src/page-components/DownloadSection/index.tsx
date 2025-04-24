@@ -125,7 +125,6 @@ export default function DownloadSection() {
           <CommonImage src={iPhone} layout="intrinsic" className={styles.iphoneBg} />
           <CustomSvg type="downloadCoin" className={styles.downloadCoin} />
         </div>
-
         {/* <QRCode isAndroid={false} style={{ visibility: 'hidden' }} /> */}
       </motion.div>
     </section>
