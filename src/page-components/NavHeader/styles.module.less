@@ -246,9 +246,15 @@
 @media screen and (max-width: @divide-599){
   .leftLogo {
     left: 12px;
-    width: 131px;
-    height: 32px;
+    width: 127px;
+    height: 38px;
+    aspect-ratio: 10/3;
     top: 28px;
+    span {
+      img {
+       object-fit: contain;
+      }
+    }
   }
   .downloadButtonContainer {
     right: 12px;
