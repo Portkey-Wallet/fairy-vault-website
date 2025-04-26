@@ -56,7 +56,7 @@ import aelfScanEntry from './home/aelfScanEntry.svg';
 import Key from './home/Key.png';
 import Lock from './home/Lock.png';
 import Database from './home/Database.png';
-import fakeQRCode from './home/fakeQRCode.png';
+import appleQRCode from './home/appleQRCode.png';
 import iPhone from './home/iPhone.png';
 import androidQRCode from './home/androidQRCode.png';
 import iconFast from './iconFast.svg';
@@ -144,7 +144,7 @@ export {
   Key,
   Lock,
   Database,
-  fakeQRCode,
+  appleQRCode,
   iPhone,
   androidQRCode,
   eoaScreen1,

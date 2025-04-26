@@ -60,6 +60,7 @@ export default function DownloadSection() {
         whileInView={WHILE_IN_VIEW}
         viewport={VIEWPORT}
         variants={variantOpacity(1)}>
+        {/* <div className={styles.downloadSectionContainer}> */}
         <div className={styles.downloadContainerLeft}>
           <h1 className={styles.downloadTitle}>
             Get started with FairyVault <br />
@@ -68,7 +69,11 @@ export default function DownloadSection() {
           <h1 className={styles.downloadTitleMobile1}>Get started with FairyVault</h1>
           <h1 className={styles.downloadTitleMobile2}>Your gateway to the future of Web3.</h1>
           <div className={clsx(styles.buttonContainer)}>
-            <div className={clsx('flex-row-center-center', styles.containerAppStore)} onClick={() => {}}>
+            <div
+              className={clsx('flex-row-center-center', styles.containerAppStore)}
+              onClick={() => {
+                window.open('https://apps.apple.com/app/fairyvault/id6741625830', '_blank');
+              }}>
               {/* <div className="flex-row-center-center"> */}
               <CommonImage src={appstoreIos} className={styles.appStoreIcon} />
               <span className={styles.appStoreText}>Download for iOS</span>
@@ -126,6 +131,7 @@ export default function DownloadSection() {
           <CustomSvg type="downloadCoin" className={styles.downloadCoin} />
         </div>
         {/* <QRCode isAndroid={false} style={{ visibility: 'hidden' }} /> */}
+        {/* </div> */}
       </motion.div>
     </section>
   );

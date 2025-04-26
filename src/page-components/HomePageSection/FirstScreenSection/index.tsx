@@ -195,7 +195,6 @@ export default function FirstScreenSection({ homeRef }: { homeRef: React.RefObje
     });
     return () => unsubscribe();
   }, [screenIndex, screenStack]);
-  console.log('wfs direction', direction);
   const springConfig = {
     stiffness: 150,
     damping: 30,
@@ -229,7 +228,11 @@ export default function FirstScreenSection({ homeRef }: { homeRef: React.RefObje
             while easily navigating the decentralised world.
           </span>
           <div className={clsx('flex-row-center-center', 'margin-top-64', 'gap-24', styles.downloadButtonContainer)}>
-            <div className={clsx('flex-row-center-center', styles.containerAppStore)} onClick={() => {}}>
+            <div
+              className={clsx('flex-row-center-center', styles.containerAppStore)}
+              onClick={() => {
+                window.open('https://apps.apple.com/app/fairyvault/id6741625830', '_blank');
+              }}>
               <div className="flex-row-center-center">
                 <CommonImage src={appstoreIos} className={styles.appStoreIcon} />
                 <span className={styles.appStoreText}>Download for iOS</span>
