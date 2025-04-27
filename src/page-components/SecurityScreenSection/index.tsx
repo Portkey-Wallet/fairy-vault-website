@@ -4,6 +4,7 @@ import SecurityIntroductionItem from './SecurityIntroductionItem';
 import { Key, Lock, Database } from 'assets/images';
 import { variantLeftToRight, variantOpacity, variantRightToLeft } from 'constants/motion';
 import FAQCard from './FAQItem';
+import { useState } from 'react';
 const faqs = [
   {
     question: 'What is an EOA wallet and why do I need one for aelf?',
@@ -26,32 +27,41 @@ const faqs = [
       'Yes! FairyVault is designed to seamlessly connect with decentralized applications (dApps) on the aelf blockchain. Simply open the app, navigate to the dApp browser, and connect with your favorite aelf-based games, marketplaces, and DeFi protocols with a single tap.',
   },
 ];
-export default function SecurityScreenSection() {
+export default function SecurityScreenSection({ securityRef }: { securityRef: React.RefObject<HTMLDivElement> }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <section className={clsx(['section-container-80', styles.securitySection])}>
-      <h1 className={styles.securityTitle}>Your security is our priority</h1>
-      <div className={clsx('flex-row', 'gap-24', styles.introContainer)}>
-        <SecurityIntroductionItem
-          iconName={Key}
-          content={'Complete user control over assets'}
-          variants={variantLeftToRight(1.5)}
-        />
-        <SecurityIntroductionItem
-          iconName={Lock}
-          content={'Advanced encryption protocols'}
-          variants={variantOpacity(1)}
-        />
-        <SecurityIntroductionItem
-          iconName={Database}
-          content={'Secure backup solutions'}
-          variants={variantRightToLeft(1.5)}
-        />
-      </div>
-      <h1 className={styles.securityTitle}>FAQ</h1>
-      <div className={clsx('flex-column', 'gap-32')}>
-        {faqs.map((faq, index) => (
-          <FAQCard key={index} question={faq.question} answer={faq.answer} />
-        ))}
+    <section id="security" className={clsx([styles.securitySection])} ref={securityRef}>
+      <div className={clsx([styles.securitySectionWrapper])}>
+        <h1 className={styles.securityTitle}>Your security is our priority</h1>
+        <div className={clsx('flex-row', 'gap-24', styles.introContainer, styles.scrollableContainer)}>
+          <SecurityIntroductionItem
+            iconName={Key}
+            content={'Complete user control over assets'}
+            variants={variantLeftToRight(1.5)}
+          />
+          <SecurityIntroductionItem
+            iconName={Lock}
+            content={'Advanced encryption protocols'}
+            variants={variantOpacity(1)}
+          />
+          <SecurityIntroductionItem
+            iconName={Database}
+            content={'Secure backup solutions'}
+            variants={variantRightToLeft(1.5)}
+          />
+        </div>
+        <h1 className={styles.securityTitle}>FAQ</h1>
+        <div className={clsx('flex-column', 'gap-32', styles.faqs)}>
+          {faqs.map((faq, index) => (
+            <FAQCard
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

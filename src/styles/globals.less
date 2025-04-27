@@ -78,13 +78,18 @@ a {
 }
 
 .home-page {
-  overflow-x: hidden;
+  // overflow-x: hidden;
   background: @bg-7;
-  @media screen and (max-width: @divide-991) {
-    overflow-x: auto;
+  min-width: 360px;
+  @media screen and (max-width: @divide-1023) {
+    // overflow-x: hidden;
   }
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
 .empty-container {
   min-width: @page-min-width;
   background-color: '#4D83EF'; 

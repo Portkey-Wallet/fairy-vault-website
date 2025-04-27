@@ -1,9 +1,35 @@
 @import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
+.flexWrap {
+  flex-wrap: wrap;
+  gap: 16px;
+}
 .featureSection {
   position: relative;
   top: -102px;
   background: @bg-7;
   color: white;
+  padding: 0px 80px 240px;
+  display: flex;
+  flex-direction: column;
+}
+.featureSectionWrapper {
+  position: relative;
+  background: @bg-7;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+  left: 50%; 
+  transform: translateX(-50%);
+}
+.featureSectionTop {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  align-self: center;
+  overflow-x: hidden;
 }
 .featureTitle {
   color: white;
@@ -11,6 +37,10 @@
   font-size: 72px;
   font-style: normal;
   font-weight: 700;
+  line-height: 120%; /* 86.4px */
+  letter-spacing: -2.16px;  
+  // width: 1280px;
+  margin-bottom: 64px;
 }
 .miniIcon {
   flex: none;
@@ -19,8 +49,8 @@
 }
 .largeIcon {
   flex: none;
-  width: 260px;
-  height: 260px;
+  width: 400px;
+  height: 320px;
 }
 .introContainer {
   display: flex;
@@ -30,13 +60,23 @@
   border-radius: 16px;
   border: 1px solid #414142;
   background: #1F1F21;
-  padding: 48px 64px;
+  padding: 48px 62px;
+  width: 100%;
+  .introContent {
+    color: white;
+    /* Subtitle */
+    font-family: 'BG';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 28.8px */
+  }
 }
 .introDataContainer {
   margin-top: 16px;
   gap: 12px;
 }
-.introDataContainer:nth-child(1) {
+.marginTop32 {
   margin-top: 32px;
 }
 .introTitle {
@@ -45,6 +85,8 @@
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
+  line-height: 120%; /* 57.6px */
+  letter-spacing: -1.44px;
 }
 .featureSubTitle {
   color: white;
@@ -53,17 +95,208 @@
   font-style: normal;
   font-weight: 700;
   margin-top: 160px;
+  margin-bottom: 64px !important;
+  line-height: 120%; /* 57.6px */
+  letter-spacing: -1.44px;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  overflow-x: hidden;
+
+  @media screen and (max-width: @divide-1023) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .dappIcon {
-  flex: 1;
+  // flex: 1 1 25%;
   height: 100px;
+  // margin: 0;
 }
 .dappIconSvg {
-  &:hover {
+  &:hover, &:active {
     svg {
       path {
         fill: white;
       }
+    }
+  }
+}
+.forestIconStyle {
+  &:hover, &:active  {
+    svg {
+      path {
+        fill: #1B76E2;
+      }
+    }
+  }
+}
+.etransferIconStyle {
+  &:hover, &:active {
+    svg {
+      g g g:nth-of-type(1){
+        path {
+          fill: #285EFF;
+        }
+      }
+      g g g:nth-of-type(2){
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+}
+.tmrwDaoIconStyle {
+  &:hover, &:active {
+    svg {
+      path {
+        fill: #5D49F6;
+      }
+    }
+  }
+}
+.aeFinderIconStyle {
+  &:hover, &:active {
+    svg {
+      g g g path {
+        fill: white;
+      }
+      g g g path:nth-of-type(1){
+        fill: #195ED8;
+      }
+      g g g path:nth-of-type(6){
+        fill: #195ED8;
+      }
+    }
+  }
+}
+// .aelfScanIconStyle {
+//   &:hover{
+//     svg {
+//       path {
+//         fill: white;
+//       }
+//       path:nth-of-type(1){
+//         fill: #195ED8;
+//       }
+//       path:nth-of-type(2){
+//         fill: #195ED8;
+//       }
+//     }
+//   }
+// }
+// .etransferIconStyle:hover #Vector path {
+//   fill: #285EFF !important;
+// }
+
+// .etransferIconStyle:hover #Union path {
+//   fill: white !important;
+// }
+@media screen and (max-width: @divide-1439) and (min-width: @divide-1024){
+  .featureSection {
+    padding: 0px 24px 160px;
+  }
+  .featureSectionWrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width: @divide-1023) and (min-width: @divide-600){
+  .featureSection {
+    padding: 0px 24px 120px;
+    top: -232px;
+    .featureTitle {
+      font-size: 56px;
+      margin-bottom: 32px;
+    }
+    .introContainer {
+      flex-direction: column;
+      padding: 32px;
+      .titleAndContentWrapper {
+        align-self: flex-start;
+      }
+      .introTitle {
+        font-size: 32px;
+      }
+      .introContent {
+        font-size: 18px;
+      }
+      .largeIcon {
+        flex: none;
+        width: 300px;
+        height: 240px;
+        margin-top: 32px;
+      }
+      .introDataContainer {
+        margin-top: 16px;
+        gap: 12px;
+      }
+      .marginTop32 {
+        margin-top: 24px !important;
+      }
+    }
+    .featureSubTitle {
+      margin-top: 160px;
+      margin-bottom: 32px;
+    }
+    // .dappIcon {
+      // flex: 1 1 50%; 
+      // max-width: 50%;
+      // height: 100px;
+      // margin: 0;
+    // }
+  }
+  .featureSectionWrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width: @divide-599){
+  .featureSectionWrapper {
+    width: 100%;
+  }
+  .featureSection {
+    padding: 0px 16px 80px;
+    top: -272px;
+    .featureTitle {
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+    .introContainer {
+      flex-direction: column;
+      padding: 24px 16px;
+      .titleAndContentWrapper {
+        align-self: flex-start;
+      }
+      .introTitle {
+        font-size: 24px;
+      }
+      .introContent {
+        font-size: 16px;
+      }
+      .miniIcon {
+        flex: none;
+        width: 20px;
+        height: 20px;
+      }
+      .largeIcon {
+        flex: none;
+        width: 250px;
+        height: 200px;
+        margin-top: 32px;
+      }
+      .introDataContainer {
+        margin-top: 12px;
+        gap: 8px;
+      }
+      .marginTop32 {
+        margin-top: 24px !important;
+      }
+    }
+    .featureSubTitle {
+      font-size: 24px;
+      margin-top: 120px;
+      margin-bottom: 24px;
     }
   }
 }

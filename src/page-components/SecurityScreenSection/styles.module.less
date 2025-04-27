@@ -1,10 +1,19 @@
 @import '/src/assets/theme/color.less';
+@import '/src/assets/theme/constants.less';
 .securitySection {
   position: relative;
   top: -102px;
   background: @bg-7;
   color: white;
-  padding-top: 240px;
+  margin: 0 80px;
+}
+.securitySectionWrapper {
+  position: relative;
+  background: @bg-7;
+  color: white;
+  max-width: 1280px;
+  left: 50%; 
+  transform: translateX(-50%);
 }
 .securityTitle {
   color: white;
@@ -12,6 +21,7 @@
   font-size: 72px;
   font-style: normal;
   font-weight: 700;
+  line-height: 120%; /* 67.2px */
   margin-bottom: 0.8888888888em;
 }
 .introContainer {
@@ -38,6 +48,9 @@
   font-size:32px;
   font-style: normal;
   font-weight: 700;
+  margin-top: 64px;
+  line-height: 120%; /* 38.4px */
+  letter-spacing: -0.64px;
 }
 .halfSizeImage {
   width: 50%;
@@ -52,7 +65,8 @@
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: #1F1F21;
-  padding: 37.5px 32px;
+  padding: 32px 32px;
+  cursor: pointer;
 }
 
 .faqHeader {
@@ -72,11 +86,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: 120%; /* 28.8px */
+    margin-bottom: 0px;
   }
 
   .toggleButton {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     // border: none;
     border-radius: 50%; 
     border: 1px solid #E3E3E3;
@@ -99,8 +114,10 @@
     // }
 
     .icon {
-      display: inline-block;
-      line-height: 1;
+      // display: inline-block;
+      // line-height: 1;
+      width: 24px;
+      height: 24px;
     }
   }
 }
@@ -108,9 +125,10 @@
 .faqAnswer {
   overflow: hidden;
   // margin-top: 37.5px;
-  padding-top: 37.5px;
+  // padding-top: 37.5px;
   display: flex;
-  align-items: flex-end;
+  // align-items: flex-end;
+  flex-direction: column;
   p {
     // margin: 16px 0;
     color: #FFF;
@@ -120,8 +138,135 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+    line-height: 140%; /* 22.4px */
   }
 }
-.displayNone {
-  // display: none;
+.securityIcon {
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+}
+@media screen and (max-width: @divide-1023){
+  .SecurityIntroText {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: @divide-1439) and (min-width: @divide-1024){
+  .securitySection {
+    margin: 0 24px;
+  }
+}
+@media screen and (max-width: @divide-1023) and (min-width: @divide-600){
+  .scrollableContainer > * {
+    &:first-child {
+      margin-left: 24px;
+    }
+    &:last-child {
+      margin-right: 24px;
+    }
+    min-width: 309.33px;
+  }
+  .SecurityIntroContainer {
+    width: 309.33px;
+  }
+  .securitySection {
+    margin: 0 0px;
+    top: -192px;
+  }
+  .securityTitle, .faqs {
+    margin: 0 24px;
+  }
+  .introContainer {
+    margin-bottom: 160px;
+  }
+  .securityTitle {
+    font-size: 56px;
+    margin-bottom: 32px;
+  }
+  .securityIcon {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+  }
+}
+@media screen and (max-width: @divide-599){
+  .scrollableContainer > * {
+    &:first-child {
+      margin-left: 16px;
+    }
+    &:last-child {
+      margin-right: 16px;
+    }
+    // flex: 1 1 33%; 
+    // max-width: 400px;
+    min-width: 240px !important;
+  }
+  .SecurityIntroContainer {
+    width: 240px;
+  }
+  .introContainer {
+    margin-bottom: 120px;
+  }
+  .securitySectionWrapper {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .securitySection {
+    margin: 0 0px;
+    top: -232px;
+  }
+  .securityTitle, .faqs {
+    margin: 0 16px;
+  }
+  .securityTitle {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+  .faqCard {
+    padding: 32px 16px;
+  }
+  .faqHeader { 
+    gap: 4px;
+    h3 {
+      font-size: 18px;
+    }
+    .toggleButton {
+      min-width: 40px;
+    }
+  }
+  .securityIcon {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+  }
+  // .faqAnswer { 
+  //   p {
+  //     font-size: 16px;
+  //   }
+  // }
+}
+
+
+
+
+.scrollableContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 24px;
+  padding: 16px 0px;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollableContainer > * {
+  // flex: 1 1 33%; 
+  // max-width: 400px;
+  min-width: 309.33px;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useUserAgent } from 'hooks/useUserAgent';
 import BottomDownloadSection from 'page-components/HomePageSection/BottomDownloadSection';
 import DevelopGuideSection from 'page-components/HomePageSection/DevelopGuideSection';
@@ -25,7 +25,9 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
   const uaType = useUserAgent();
   const [scale, setScale] = useState(1);
   const [scrollY, setScrollY] = useState(0);
-
+  const homeRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
+  const securityRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -41,23 +43,14 @@ export default function Home({ headerNav, footerNav, socialMedia, homeData, down
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  return null;
   return (
     <div className="home-page">
-      {/* <div>wfs</div> */}
-      <NavHeader type={NAV_TYPE.BLUE} path={ROUTER.DEFAULT} headerNav={headerNav} downloadIsButton />
+      <NavHeader homeRef={homeRef} featuresRef={featuresRef} securityRef={securityRef} />
       <div className="empty-container"></div>
 
-      <FirstScreenSection
-        type={uaType}
-        focusImg={s3Url + homeData?.focusImage?.filename_disk}
-        chromeStoreUrl={downloadResource?.extensionDownloadUrl || ''}
-        androidStoreUrl={downloadResource?.androidDownloadUrl || ''}
-        apkS3Url={downloadResource?.apkDownloadUrl || TMP_APK_S3_DOWNLOAD}
-        iosStoreUrl={downloadResource?.iosDownloadUrl || ''}
-      />
-      <FeatureScreenSection />
-      <SecurityScreenSection />
+      <FirstScreenSection homeRef={homeRef} />
+      <FeatureScreenSection featuresRef={featuresRef} />
+      <SecurityScreenSection securityRef={securityRef} />
       <DownloadSection />
       <FooterSection />
       {/* <DAppSection title={homeData?.dAppSectionTitle} dAppList={homeData?.dAppList} />

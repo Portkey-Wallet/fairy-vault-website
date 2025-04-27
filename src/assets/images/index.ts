@@ -28,6 +28,10 @@ import floatIcon3 from './home/floatIcon3.png';
 import eoaScreen1 from './home/eoaScreen1.png';
 import eoaScreen2 from './home/eoaScreen2.png';
 import eoaScreen3 from './home/eoaScreen3.png';
+import ScreenHome from './home/ScreenHome.png';
+import ScreenFirst from './home/ScreenFirst.png';
+import ScreenSecond from './home/ScreenSecond.png';
+import ScreenThird from './home/ScreenThird.png';
 import phoneContainer from './home/phoneContainer.png';
 import addAd from './home/addAd.svg';
 import faceId from './home/faceId.svg';
@@ -52,7 +56,9 @@ import aelfScanEntry from './home/aelfScanEntry.svg';
 import Key from './home/Key.png';
 import Lock from './home/Lock.png';
 import Database from './home/Database.png';
+import appleQRCode from './home/appleQRCode.png';
 import iPhone from './home/iPhone.png';
+import androidQRCode from './home/androidQRCode.png';
 import iconFast from './iconFast.svg';
 import iconTime from './iconTime.svg';
 import iconCode from './iconCode.svg';
@@ -138,10 +144,16 @@ export {
   Key,
   Lock,
   Database,
+  appleQRCode,
   iPhone,
+  androidQRCode,
   eoaScreen1,
   eoaScreen2,
   eoaScreen3,
+  ScreenHome,
+  ScreenFirst,
+  ScreenSecond,
+  ScreenThird,
   iconFast,
   iconTime,
   iconCode,

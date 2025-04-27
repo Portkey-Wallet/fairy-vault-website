@@ -73,7 +73,7 @@ export default function Download({ headerNav, footerNav, socialMedia, downloadRe
 
   return (
     <div>
-      <NavHeader type={NAV_TYPE.WHITE} path={ROUTER.DOWNLOAD} downloadIsButton={false} headerNav={headerNav} />
+      {/* <NavHeader /> */}
       <div className={styles.emptyContainerDownload}></div>
 
       <motion.div initial={INITIAL} whileInView={WHILE_IN_VIEW} viewport={VIEWPORT}>

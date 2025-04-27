@@ -23,13 +23,19 @@ export default function IntroductionSection({
       whileInView={WHILE_IN_VIEW}
       viewport={VIEWPORT}
       className={styles.introContainer}>
-      <div className="flex-column-start">
+      <div className={clsx('flex-column-start', styles.titleAndContentWrapper)}>
         <span className={styles.introTitle}>{title}</span>
         {contentData.map((item, index) => {
           return (
-            <div key={index + item.description} className={clsx(['flex-row-center-center', styles.introDataContainer])}>
+            <div
+              key={index + item.description}
+              className={clsx([
+                'flex-row-center-center',
+                styles.introDataContainer,
+                index === 0 && styles.marginTop32,
+              ])}>
               <CommonImage src={item.icon} className={styles.miniIcon} />
-              <span>{item.description}</span>
+              <span className={styles.introContent}>{item.description}</span>
             </div>
           );
         })}
