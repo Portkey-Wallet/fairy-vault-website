@@ -5,17 +5,18 @@
 | Feature Name | Status | Branch | Development Machine | Test Coverage | Last Update |
 |-------------|--------|--------|---------------------|---------------|-------------|
 | Project Initialization | ✅ | main | - | - | 2024-04-28 |
+| Project Base Configuration | 🚧 | feature/project-base-config | 8e:4b:7f:7b:20:4c | - | 2024-04-28 |
 
 ## Pending Tasks
 
 ### 🚧 In Development
 | Feature Name | Branch | Development Machine | Priority | Start Date | Expected Completion |
 |-------------|--------|---------------------|----------|------------|---------------------|
+| Project Base Configuration | feature/project-base-config | 8e:4b:7f:7b:20:4c | P0 | 2024-04-28 | 2024-04-30 |
 
 ### 🔜 To Be Developed
 | Feature Name | Priority | Estimated Time | Dependencies | Notes |
 |-------------|----------|----------------|--------------|-------|
-| Project Base Configuration | P0 | 2d | - | Sentry setup, style config, build optimization |
 | User Authentication System | P0 | 5d | - | Login, registration, password reset |
 | Wallet Connection | P1 | 3d | Auth System | Multi-chain wallet support |
 | UI Component Library | P1 | 4d | - | Base UI components implementation |
@@ -46,9 +47,9 @@
 ## Progress Tracking
 
 ### This Week Completed
-- [x] Project structure initialization
-- [x] Development environment setup
-- [ ] CI/CD pipeline setup
+- [✅] Project structure initialization
+- [✅] Development environment setup
+- [✅] CI/CD pipeline setup
 
 ### Next Week Plan
 - [ ] Complete base configuration
