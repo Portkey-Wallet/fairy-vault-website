@@ -5,7 +5,7 @@
 | Feature Name | Status | Branch | Development Machine | Test Coverage | Last Update |
 |-------------|--------|--------|---------------------|---------------|-------------|
 | Project Initialization | ✅ | main | - | - | 2024-04-28 |
-| Project Base Configuration | 🚧 | feature/project-base-config | 8e:4b:7f:7b:20:4c | - | 2024-04-28 |
+| Project Base Configuration | 🚧 | feature/project-base-config | 8e:4b:7f:7b:20:4c | 0% | 2024-04-28 |
 
 ## Pending Tasks
 
@@ -40,9 +40,9 @@
 - chore: Build process or auxiliary tool changes
 
 ### Test Coverage Requirements
-- Unit test: 80%
-- Integration test: 60%
-- E2E test: 40%
+- Unit test: 80% (Current: 0%)
+- Integration test: 60% (Current: 0%)
+- E2E test: 40% (Current: 0%)
 
 ## Progress Tracking
 
@@ -55,8 +55,13 @@
 - [ ] Complete base configuration
 - [ ] Implement authentication system
 - [ ] Develop UI components
+- [ ] Set up test framework
+- [ ] Implement unit tests
 
 ## Issue Tracking
 
+| Issue ID | Description | Status | Priority | Assignee | Created Date |
+|----------|-------------|--------|----------|----------|--------------|
+| TST-001 | No test coverage | High | P0 | 8e:4b:7f:7b:20:4c | 2024-04-28 |
 | Issue ID | Description | Status | Priority | Assignee | Created Date |
 |----------|-------------|--------|----------|----------|--------------| 
