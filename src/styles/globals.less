@@ -12,8 +12,11 @@ body {
   padding: 0;
   margin: 0;
   background-color: @bg-2;
+  scrollbar-width: none;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
 html body {
   color: @font-2;
   .font-family-regular();
