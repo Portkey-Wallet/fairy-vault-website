@@ -19,6 +19,13 @@ export default function FooterSection() {
               className={styles.footerSubtitle}>
               Contact us
             </a>
+            <a
+              href="https://fairyvault.gitbook.io/fairyvault-docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.footerSubtitle}>
+              Tutorials
+            </a>
           </div>
           <div className={clsx('flex-column gap-24', styles.width200)}>
             <span className={styles.footerTitle}>Legal</span>
