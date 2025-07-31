@@ -7,16 +7,17 @@ import qs from 'query-string';
 import { useLocation } from 'react-use';
 
 const GoogleReCaptcha = dynamic(import('@matt-block/react-recaptcha-v2'), { ssr: false });
-type TParams = { siteKey?: string; providerName?: string };
+type TParams = { sitekey?: string; providerName?: string };
 const DEFAULT_PROVIDER_NAME = 'FairyVault';
 
 export default function ReCaptcha() {
   const location = useLocation();
 
-  const { siteKey, providerName } = useMemo(
+  const { sitekey, providerName } = useMemo(
     () => (location.search ? qs.parse(location.search) : {}) as TParams,
     [location.search],
   );
+
   const handleSuccess = useCallback(
     (response: string) => {
       const name = providerName || DEFAULT_PROVIDER_NAME;
@@ -35,7 +36,7 @@ export default function ReCaptcha() {
   return (
     <div className={styles.reCaptchaContainer}>
       <GoogleReCaptcha
-        siteKey={(siteKey as string) || RE_CAPTCHA_SITE_KEY}
+        siteKey={(sitekey as string) || RE_CAPTCHA_SITE_KEY}
         theme="light"
         size="normal"
         onSuccess={handleSuccess}
