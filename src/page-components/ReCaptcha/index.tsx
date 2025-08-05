@@ -26,7 +26,7 @@ export default function ReCaptcha() {
       if (!provider) message.error(`Timeout, please download and install the ${DEFAULT_PROVIDER_NAME} extension`);
 
       providerInterface?.request({
-        method: 'setReCaptchaCode',
+        method: 'portkey_setReCaptchaCodeV2',
         payload: { response },
       });
     },
