@@ -103,7 +103,12 @@ export default function Download({ headerNav, footerNav, socialMedia, downloadRe
                 <DownloadGroupForDownloadPage
                   className={styles.downloadBtn}
                   type={tabChangeUaType}
-                  resource={downloadResource || {}}
+                  resource={{
+                    iosDownloadUrl: 'https://apps.apple.com/us/app/fairyvault/id6741625830',
+                    androidDownloadUrl: 'https://play.google.com/store/apps/details?id=com.portkey.fairyvault',
+                    extensionDownloadUrl:
+                      'https://chromewebstore.google.com/detail/fairy-vault/jhgjbdpoodaokoflbmdmlllgehdhkmja',
+                  }}
                 />
               </motion.div>
               {/* In the webpage, SSL_Tip content appears on the left */}
@@ -113,14 +118,14 @@ export default function Download({ headerNav, footerNav, socialMedia, downloadRe
             </div>
             <div className={clsx(['flex-column-center', styles.pageRight])}>
               <motion.div variants={variantDownToUp(2)}>
-                <CommonImage
+                {/* <CommonImage
                   src={rightImage}
                   width={600}
                   height={600}
                   className={styles.mainImage}
                   layout="intrinsic"
                   priority
-                />
+                /> */}
               </motion.div>
             </div>
           </div>
