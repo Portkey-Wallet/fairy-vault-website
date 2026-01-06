@@ -124,7 +124,7 @@ export default function NavFooter({
               );
             })}
           </div>
-          <div className={clsx(styles.footerPortKey, footerPortKeyClassName)}>Portkey@{getFullYear()}</div>
+          <div className={clsx(styles.footerPortKey, footerPortKeyClassName)}>FairyVault@{getFullYear()}</div>
         </div>
       </div>
     </footer>
