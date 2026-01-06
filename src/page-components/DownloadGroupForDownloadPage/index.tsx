@@ -21,7 +21,7 @@ function IOSButtonGroup({ storeUrl, qrCodeImg }: { storeUrl: string; qrCodeImg: 
   return (
     <>
       <IOSDownloadButton storeUrl={storeUrl} />
-      <QRCodeDownloadButton qrCodeImg={s3Url + qrCodeImg} />
+      {qrCodeImg && <QRCodeDownloadButton qrCodeImg={s3Url + qrCodeImg} />}
     </>
   );
 }
@@ -40,9 +40,9 @@ function AndroidButtonGroup({
       <div className={styles.btnGroup}>
         <AndroidDownloadButton storeUrl={googlePlayUrl} />
         <div className={styles.gap} />
-        <ApkDownloadButton apkS3Url={apkS3Url} />
+        {apkS3Url && <ApkDownloadButton apkS3Url={apkS3Url} />}
       </div>
-      <QRCodeDownloadButton qrCodeImg={s3Url + qrCodeImg} />
+      {qrCodeImg && <QRCodeDownloadButton qrCodeImg={s3Url + qrCodeImg} />}
     </div>
   );
 }
