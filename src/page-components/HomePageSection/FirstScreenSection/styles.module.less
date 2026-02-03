@@ -403,6 +403,12 @@
     margin-top: 182px;
   }
 }
+@media screen and (max-width: @divide-1023){
+  .downloadButtonContainer {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
 @media screen and (max-width: @divide-599){
   .iconFloating {
     display: none;
@@ -422,7 +428,7 @@
   }
   .downloadButtonContainer {
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
     .containerAppStore {
       width: 269px;
       height: 56px;

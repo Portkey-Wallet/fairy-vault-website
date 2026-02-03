@@ -10,6 +10,7 @@ import {
   verified,
   appstoreAndroid,
   appstoreIos,
+  chromeIcon,
   phoneContainer,
   ScreenHome,
   ScreenFirst,
@@ -245,6 +246,14 @@ export default function FirstScreenSection({ homeRef }: { homeRef: React.RefObje
               }}>
               <CommonImage src={appstoreAndroid} className={styles.appStoreIcon} />
               <div className={styles.appStoreText}>Download for Android</div>
+            </div>
+            <div
+              className={clsx('flex-row-center-center', styles.containerAppStore)}
+              onClick={() => {
+                window.open('https://chromewebstore.google.com/detail/fairy-vault/jhgjbdpoodaokoflbmdmlllgehdhkmja', '_blank');
+              }}>
+              <CommonImage src={chromeIcon} className={styles.appStoreIcon} />
+              <div className={styles.appStoreText}>Chrome Extension</div>
             </div>
           </div>
         </div>

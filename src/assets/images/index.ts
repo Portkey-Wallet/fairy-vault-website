@@ -43,6 +43,7 @@ import swapThin from './home/swapThin.svg';
 import featureManagement from './home/featureManagement.png';
 import hub from './home/hub.svg';
 import extension from './home/extension.svg';
+import chromeIcon from './home/chromeIcon.svg';
 import offlineBolt from './home/offlineBolt.svg';
 import featureEarth from './home/featureEarth.png';
 import portkeyEntry from './home/portkeyEntry.svg';
@@ -131,6 +132,7 @@ export {
   featureManagement,
   hub,
   extension,
+  chromeIcon,
   offlineBolt,
   featureEarth,
   portkeyEntry,
