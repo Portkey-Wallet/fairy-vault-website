@@ -2,13 +2,19 @@
 @import '/src/assets/theme/color.less';
 @import '/src/assets/theme/constants.less';
 
+.downloadPageWrapper {
+  background-color: #1F1F21;
+  min-height: 100vh;
+}
+
 .emptyContainerDownload {
   height: 80px;
+  background-color: #1F1F21;
 }
 .downloadPage {
   padding-top: 48px;
   padding-bottom: 70px;
-  background-color: @bg-2;
+  background-color: #1F1F21;
   overflow-x: hidden;
 
   .pageBody {
@@ -69,7 +75,7 @@
   display: inline-flex;
   flex-wrap: nowrap;
   padding: 4px;
-  border: 1px solid @border-2;
+  border: 1px solid #414142;
   border-radius: 6px;
 
   .tabsBtn {
@@ -78,11 +84,11 @@
     padding: 6px 30px;
     font-weight: 500;
     font-size: 16px;
-    color: @font-5;
+    color: #FFFFFFB2;
     margin-left: 10px;
 
     &:hover {
-      color: @font-1;
+      color: #FFFFFF;
       background-color: transparent;
     }
 
@@ -95,12 +101,12 @@
     }
   }
   .tabsBtnSelected {
-    background: @font-1;
+    background: #FFFFFF;
     border-radius: 6px;
-    color: @font-3;
+    color: #1F1F21;
     &:hover {
-      background: @font-1;
-      color: @font-3;
+      background: #FFFFFF;
+      color: #1F1F21;
     }
   }
   @media screen and (max-width: 393px) {
@@ -120,6 +126,7 @@
   margin-top: 40px;
   margin-bottom: 16px;
   white-space: nowrap;
+  color: #FFFFFF;
   @media screen and (max-width: 1079px) {
     white-space: normal;
   }
@@ -127,7 +134,7 @@
 .sectionDesc {
   font-size: 18px;
   line-height: 26px;
-  color: @font-5;
+  color: #FFFFFFB2;
 }
 
 .downloadFooter {
@@ -135,10 +142,10 @@
   position: fixed;
   bottom: 0;
   z-index: 1;
-  background: @bg-4;
+  background: #151318;
 
   .downloadFooterMedia {
-    border-top: 1px solid @border-2;
+    border-top: 1px solid #414142;
   }
 
   @media only screen and (max-height: 1011px) {
