@@ -3,11 +3,11 @@ import { Button } from 'antd';
 import clsx from 'clsx';
 import CommonImage from 'components/CommonImage';
 import { downloadPageData, IDownloadPageTabs } from 'constants/downloadPageData';
-import { DEVICE_TYPE, NAV_TYPE, ROUTER } from 'constants/enum';
+import { DEVICE_TYPE } from 'constants/enum';
 import { useUserAgent } from 'hooks/useUserAgent';
 import DownloadGroupForDownloadPage from 'page-components/DownloadGroupForDownloadPage';
 import NavFooter from 'page-components/NavFooter';
-import NavHeader from 'page-components/NavHeader';
+import DownloadPageHeader from 'page-components/DownloadPageHeader';
 import styles from './styles.module.less';
 import DownloadSSLTip from 'page-components/DownloadPageSection/DownloadSSLTip';
 import { motion } from 'framer-motion';
@@ -72,8 +72,8 @@ export default function Download({ headerNav, footerNav, socialMedia, downloadRe
   }, [handleTabClick, uaType]);
 
   return (
-    <div>
-      {/* <NavHeader /> */}
+    <div className={styles.downloadPageWrapper}>
+      <DownloadPageHeader />
       <div className={styles.emptyContainerDownload}></div>
 
       <motion.div initial={INITIAL} whileInView={WHILE_IN_VIEW} viewport={VIEWPORT}>

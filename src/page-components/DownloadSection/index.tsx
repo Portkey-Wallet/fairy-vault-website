@@ -4,7 +4,7 @@ import styles from './styles.module.less';
 import { motion } from 'framer-motion';
 import { INITIAL, variantOpacity, VIEWPORT, WHILE_IN_VIEW } from 'constants/motion';
 import clsx from 'clsx';
-import { appstoreAndroid, appstoreIos } from 'assets/images';
+import { appstoreAndroid, appstoreIos, chromeIcon } from 'assets/images';
 import CustomSvg from 'components/CustomSvg';
 import { useEffect, useState } from 'react';
 import QRCode from './QRCode';
@@ -114,6 +114,16 @@ export default function DownloadSection() {
                   <QRCode isAndroid />
                 </div>
               )}
+            </div>
+          </div>
+          <div className={clsx(styles.buttonContainer3)}>
+            <div
+              className={clsx('flex-row-center-center', styles.containerAppStore, styles.containerChrome)}
+              onClick={() => {
+                window.open('https://chromewebstore.google.com/detail/fairy-vault/jhgjbdpoodaokoflbmdmlllgehdhkmja', '_blank');
+              }}>
+              <CommonImage src={chromeIcon} className={styles.appStoreIcon} />
+              <div className={styles.appStoreText}>Chrome Extension</div>
             </div>
           </div>
         </div>
